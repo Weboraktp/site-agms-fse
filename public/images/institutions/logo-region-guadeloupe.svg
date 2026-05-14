@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Logo Région Guadeloupe</title>
+  <desc id="desc">Logo institutionnel de la Région Guadeloupe.</desc>
+  <rect width="240" height="240" fill="#fff"/>
+  <g transform="translate(44 22)">
+    <rect x="34" y="18" width="96" height="96" fill="#26b644"/>
+    <circle cx="62" cy="88" r="34" fill="#ffdd00"/>
+    <path d="M4 160C54 92 103 49 170 24C119 61 78 105 35 164Z" fill="#1d5bc5"/>
+    <path d="M18 149C60 101 103 69 160 45C114 78 78 112 40 155Z" fill="#fff"/>
+    <path d="M26 145C64 111 97 91 136 83C100 105 76 126 47 146Z" fill="#1d5bc5"/>
+    <path d="M36 143C74 113 103 96 137 88V114H57Z" fill="#fff"/>
+    <path d="M44 144C76 120 101 105 130 98V114H62Z" fill="#26b644"/>
+    <text x="32" y="156" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="21">REGION</text>
+    <text x="32" y="181" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="21">GUADELOUPE</text>
+    <rect x="32" y="194" width="70" height="5" fill="#ffdd00"/>
+  </g>
+</svg>
