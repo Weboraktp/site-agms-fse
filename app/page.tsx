@@ -37,30 +37,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section--white">
-        <div className="container two-column">
-          <SectionTitle eyebrow="Pourquoi ce projet ?" title="Réduire les freins à la réussite en santé" />
-          <div className="prose">
-            <p>{whyProjectText}</p>
-            <div className="section-actions">
-              <Link className="button button--primary" href="/projet">
-                Voir le projet complet
-                <ArrowRight size={18} aria-hidden="true" />
-              </Link>
-              <Link className="button button--on-light" href="/candidature">
-                Candidater
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="section section--motion">
         <div className="container">
           <SectionTitle
             eyebrow="Le dispositif en un coup d'oeil"
-            title="Une action simple à comprendre, avec des pages dédiées pour aller plus loin"
-            intro={projectSummary}
+            title="Un projet FSE+ contre le décrochage, l'isolement et les freins à la réussite"
+            intro={whyProjectText}
             align="center"
           />
           <div className="card-grid card-grid--four">
@@ -68,9 +50,10 @@ export default function HomePage() {
               <FeatureCard key={card.title} {...card} />
             ))}
           </div>
+          <p className="home-project-summary">{projectSummary}</p>
           <div className="section-actions section-actions--center">
             <Link className="button button--primary" href="/projet">
-              Découvrir le projet FSE+
+              Voir le détail du projet FSE
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>

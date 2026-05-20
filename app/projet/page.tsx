@@ -26,8 +26,8 @@ export default function ProjetPage() {
         intro="Un projet lancé dans le cadre du FSE+ et porté localement par l'AGMS pour renforcer l'orientation, la motivation et la réussite des jeunes dans les parcours de santé."
       />
 
-      <section className="section section--white">
-        <div className="container two-column">
+      <section className="section section--white project-why">
+        <div className="container two-column two-column--project-why">
           <SectionTitle title="Pourquoi ce projet ?" />
           <div className="prose">
             <p>{whyProjectText}</p>
