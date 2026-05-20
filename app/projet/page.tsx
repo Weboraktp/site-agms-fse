@@ -27,16 +27,23 @@ export default function ProjetPage() {
       />
 
       <section className="section section--white project-why">
-        <div className="container two-column two-column--project-why">
-          <SectionTitle title="Pourquoi ce projet ?" />
-          <div className="prose">
-            <p>{whyProjectText}</p>
-            <p>{projectSummary}</p>
-            <ul className="check-list">
-              {projectObjectives.map((objective) => (
-                <li key={objective}>{objective}</li>
-              ))}
-            </ul>
+        <div className="container">
+          <div className="project-why__layout">
+            <div className="project-why__intro">
+              <SectionTitle title="Pourquoi ce projet ?" />
+              <div className="prose">
+                <p>{whyProjectText}</p>
+                <p className="project-why__summary">{projectSummary}</p>
+              </div>
+            </div>
+
+            <div className="project-why__details">
+              <ul className="check-list project-why__objectives">
+                {projectObjectives.map((objective) => (
+                  <li key={objective}>{objective}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>

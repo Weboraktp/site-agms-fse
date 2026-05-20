@@ -121,10 +121,10 @@ export const methodPillars = [
 ];
 
 export const projectObjectives = [
+  "Accompagner les étudiants en première année de médecine afin de maximiser les chances de réussite au concours",
   "Informer et sensibiliser les lycéens aux métiers de la santé et aux parcours de formation",
   "Aider les jeunes à se projeter dans un projet d'orientation réaliste et motivant",
   "Renforcer les compétences académiques nécessaires aux filières scientifiques et de santé",
-  "Accompagner les étudiants en première année de médecine afin de maximiser leurs chances de réussite au concours",
   "Accompagner l'autonomie des étudiants dans la transition vers l'université",
   "Réduire les situations de décrochage, d'isolement ou de désengagement scolaire"
 ];
