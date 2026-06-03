@@ -1,11 +1,20 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useState } from "react";
-import { Send } from "lucide-react";
+import { ArrowRight, Home, Send } from "lucide-react";
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
-export function ContactForm({ compact = false }: { compact?: boolean }) {
+type ContactFormProps = {
+  compact?: boolean;
+  requestType?: string;
+};
+
+export function ContactForm({
+  compact = false,
+  requestType = "Demande dispositif FSE"
+}: ContactFormProps) {
   const [state, setState] = useState<SubmitState>("idle");
   const [error, setError] = useState("");
 
@@ -40,13 +49,31 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
     }
   }
 
+  if (state === "success") {
+    return (
+      <section className="form-success-screen" role="status" aria-live="polite">
+        <div className="form-success-screen__card">
+          <div className="form-success-screen__icon">
+            <Send size={34} aria-hidden="true" />
+          </div>
+          <p className="eyebrow">Demande envoyée</p>
+          <h2>Merci, votre demande a bien été transmise.</h2>
+          <p>
+            L'équipe AGMS vous recontactera rapidement à l'adresse ou au numéro indiqué dans le formulaire.
+          </p>
+          <Link className="button button--primary" href="/">
+            <Home size={18} aria-hidden="true" />
+            Retourner à l'accueil
+            <ArrowRight size={18} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <form className={`contact-form ${compact ? "contact-form--compact" : ""}`} onSubmit={handleSubmit}>
-      {state === "success" ? (
-        <div className="form-success" role="status">
-          Votre demande a bien été prise en compte. L'équipe AGMS vous recontactera rapidement.
-        </div>
-      ) : null}
+      <input name="requestType" type="hidden" value={requestType} />
 
       {state === "error" ? (
         <div className="form-error" role="alert">
@@ -72,19 +99,14 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
           <input name="telephone" type="tel" autoComplete="tel" required />
         </label>
         <label>
-          Commune
-          <input name="commune" autoComplete="address-level2" />
-        </label>
-        <label>
           Situation actuelle
           <select name="situation" defaultValue="" required>
             <option value="" disabled>
               Sélectionner
             </option>
-            <option>Terminale</option>
-            <option>PASS</option>
-            <option>LAS</option>
-            <option>Autre</option>
+            <option>Lycéens</option>
+            <option>PASS/LAS</option>
+            <option>Parents</option>
           </select>
         </label>
         <label>
@@ -108,22 +130,6 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
             <option>Non</option>
             <option>Demande en cours</option>
           </select>
-        </label>
-        <label>
-          Admission PASS/LAS
-          <select name="admission" defaultValue="" required>
-            <option value="" disabled>
-              Sélectionner
-            </option>
-            <option>Oui</option>
-            <option>Non</option>
-            <option>En attente</option>
-          </select>
-        </label>
-        <label>
-          Document facultatif
-          <input name="document" type="file" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" />
-          <small>Les documents pourront aussi être fournis ultérieurement.</small>
         </label>
       </div>
 

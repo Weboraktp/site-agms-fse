@@ -4,15 +4,14 @@ import { site } from "@/lib/content";
 export const runtime = "nodejs";
 
 const fieldLabels = {
+  requestType: "Type de demande",
   nom: "Nom",
   prenom: "Prénom",
   email: "Email",
   telephone: "Téléphone",
-  commune: "Commune",
   situation: "Situation actuelle",
   formation: "Formation visée ou obtenue",
   boursier: "Boursier",
-  admission: "Admission PASS/LAS",
   message: "Message"
 } as const;
 
@@ -26,13 +25,6 @@ function buildText(formData: FormData) {
     const value = readValue(formData, key);
     return `${label} : ${value || "Non renseigné"}`;
   });
-
-  const document = formData.get("document");
-  if (document instanceof File && document.name) {
-    lines.push(`Document transmis : ${document.name}`);
-  } else {
-    lines.push("Document transmis : aucun document joint, à fournir ultérieurement si nécessaire");
-  }
 
   lines.push("Consentement RGPD : oui");
   return lines.join("\n");
@@ -55,20 +47,22 @@ export async function POST(request: Request) {
   const to = process.env.CANDIDATURE_TO_EMAIL || site.email;
   const resendApiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL;
-  const subject = `Candidature dispositif FSE — ${prenom} ${nom}`;
+  const requestType = readValue(formData, "requestType") || "Demande dispositif FSE";
+  const subject = `${requestType} — ${prenom} ${nom}`;
   const text = buildText(formData);
+  const emailConfigured = Boolean(resendApiKey && from && to);
 
-  if (resendApiKey && from && !to) {
+  if (!emailConfigured && process.env.NODE_ENV === "production") {
     return NextResponse.json(
       {
         error:
-          "L'adresse de destination n'est pas encore configurée. Merci de renseigner CANDIDATURE_TO_EMAIL."
+          "L'envoi du formulaire n'est pas encore configuré. Merci de réessayer plus tard ou d'écrire directement à l'adresse indiquée."
       },
       { status: 500 }
     );
   }
 
-  if (resendApiKey && from && to) {
+  if (emailConfigured) {
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -97,7 +91,7 @@ export async function POST(request: Request) {
 
   return NextResponse.json({
     ok: true,
-    emailConfigured: Boolean(resendApiKey && from && to),
+    emailConfigured,
     destination: to || "Adresse à configurer"
   });
 }

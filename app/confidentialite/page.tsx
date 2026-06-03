@@ -17,7 +17,7 @@ export default function ConfidentialitePage() {
           <p>
             Le formulaire peut collecter les informations nécessaires au traitement d'une demande :
             identité, coordonnées, situation actuelle, formation visée, indication de bourse,
-            admission PASS/LAS, message libre et document facultatif.
+            message libre et consentement au traitement de la demande.
           </p>
 
           <SectionTitle title="Finalité" />

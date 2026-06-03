@@ -31,7 +31,7 @@ export default function CandidaturePage() {
               60 places disponibles.
             </p>
           </div>
-          <ContactForm />
+          <ContactForm requestType="Pré-inscription dispositif FSE" />
         </div>
       </section>
 

@@ -1170,6 +1170,59 @@ img {
   color: #9f2d1f;
 }
 
+.form-success-screen {
+  position: fixed;
+  z-index: 200;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, rgba(6, 38, 50, 0.96), rgba(2, 191, 181, 0.9)),
+    var(--color-blue-900);
+  color: white;
+  padding: 24px;
+}
+
+.form-success-screen__card {
+  width: min(100%, 620px);
+  border: 1px solid rgba(159, 247, 232, 0.36);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.28);
+  color: var(--color-blue-950);
+  padding: clamp(28px, 5vw, 52px);
+  text-align: center;
+}
+
+.form-success-screen__icon {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  place-items: center;
+  margin: 0 auto 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-cyan), var(--color-green));
+  color: white;
+}
+
+.form-success-screen h2 {
+  margin: 0;
+  color: var(--color-blue-950);
+  font-size: clamp(1.9rem, 4vw, 3.1rem);
+  line-height: 1.05;
+}
+
+.form-success-screen p:not(.eyebrow) {
+  max-width: 500px;
+  margin: 18px auto 0;
+  color: #345863;
+  font-size: 1.08rem;
+}
+
+.form-success-screen .button {
+  margin: 28px auto 0;
+}
+
 .page-header {
   background:
     linear-gradient(135deg, rgba(6, 38, 50, 0.98), rgba(2, 191, 181, 0.8)),

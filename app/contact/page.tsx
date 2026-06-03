@@ -43,7 +43,7 @@ export default function ContactPage() {
               et dans la limite des places disponibles.
             </p>
           </div>
-          <ContactForm />
+          <ContactForm requestType="Demande d'informations" />
         </div>
       </section>
     </>
