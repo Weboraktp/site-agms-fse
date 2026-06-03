@@ -1,17 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 154" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 210" role="img" aria-labelledby="title desc">
   <title id="title">Logo Région Guadeloupe</title>
-  <desc id="desc">Logo institutionnel de la Région Guadeloupe.</desc>
-  <rect width="172" height="154" fill="#fff"/>
-  <g transform="translate(6 4)">
-    <rect x="58" y="0" width="76" height="76" fill="#2fb343"/>
-    <circle cx="58" cy="63" r="31" fill="#ffdd00"/>
-    <path d="M0 112C44 70 83 34 158 2C110 37 76 75 38 123Z" fill="#1b57bd"/>
-    <path d="M13 106C50 73 90 43 149 18C104 52 73 82 39 116Z" fill="#fff"/>
-    <path d="M24 105C60 81 93 64 132 57C96 76 70 94 43 113Z" fill="#1b57bd"/>
-    <path d="M38 108C69 86 96 72 134 63V76H58Z" fill="#fff"/>
-    <path d="M47 108C75 91 100 79 128 72V76H64Z" fill="#2fb343"/>
-    <text x="54" y="102" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="500">REGION</text>
-    <text x="54" y="121" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="500">GUADELOUPE</text>
-    <rect x="54" y="132" width="72" height="4" fill="#ffdd00"/>
+  <desc id="desc">Logo institutionnel de la Région Guadeloupe, présenté sans chevauchement.</desc>
+  <rect width="220" height="210" rx="2" fill="#fff"/>
+
+  <g transform="translate(22 12)">
+    <rect x="68" y="0" width="92" height="92" fill="#2fb343"/>
+    <circle cx="64" cy="68" r="38" fill="#ffdd00"/>
+    <path d="M0 124C50 76 98 34 184 2C128 42 86 83 42 139Z" fill="#1b57bd"/>
+    <path d="M18 118C62 80 110 47 174 22C124 58 84 91 45 130Z" fill="#fff"/>
+    <path d="M32 119C72 91 112 72 154 64C116 86 84 108 52 130Z" fill="#1b57bd"/>
+    <path d="M48 123C86 97 118 82 160 72V92H76Z" fill="#fff"/>
+    <path d="M60 122C92 101 122 88 152 80V92H84Z" fill="#2fb343"/>
+  </g>
+
+  <g transform="translate(70 150)">
+    <text x="0" y="0" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500">REGION</text>
+    <text x="0" y="25" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500">GUADELOUPE</text>
+    <rect x="0" y="40" width="86" height="5" fill="#ffdd00"/>
   </g>
 </svg>
