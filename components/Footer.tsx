@@ -9,15 +9,15 @@ export function Footer() {
         <div>
           <p className="footer-title">{site.agms}</p>
           <p>Projet FSE+ contre le décrochage scolaire et accompagnement PASS/LAS</p>
-          <div className="logo-row logo-row--footer" aria-label="Emplacements logos institutionnels">
+          <div className="logo-row logo-row--footer" aria-label="Logos institutionnels du dispositif">
             <span className="logo-placeholder logo-placeholder--agms">
               <img src="/images/agms-logo.png" alt="AGMS" />
             </span>
-            <span className="logo-placeholder logo-placeholder--fse">
-              <img src="/images/institutions/logo-fse-europe.svg" alt="L'Europe s'engage en France - Union européenne" />
-            </span>
-            <span className="logo-placeholder logo-placeholder--region">
-              <img src="/images/institutions/logo-region-guadeloupe.svg" alt="Région Guadeloupe" />
+            <span className="logo-placeholder logo-placeholder--institutional">
+              <img
+                src="/images/institutions/bloc-marque-fse-guadeloupe.png"
+                alt="L'Europe s'engage en Guadeloupe - Région Guadeloupe - cofinancé par l'Union européenne"
+              />
             </span>
           </div>
         </div>

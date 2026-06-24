@@ -63,15 +63,15 @@ export function Hero() {
           </aside>
         </div>
 
-        <div className="hero__logos" aria-label="Emplacements réservés aux logos">
+        <div className="hero__logos" aria-label="Logos institutionnels du dispositif">
           <span className="logo-placeholder logo-placeholder--agms">
             <img src="/images/agms-logo.png" alt="AGMS" />
           </span>
-          <span className="logo-placeholder logo-placeholder--fse">
-            <img src="/images/institutions/logo-fse-europe.svg" alt="L'Europe s'engage en France - Union européenne" />
-          </span>
-          <span className="logo-placeholder logo-placeholder--region">
-            <img src="/images/institutions/logo-region-guadeloupe.svg" alt="Région Guadeloupe" />
+          <span className="logo-placeholder logo-placeholder--institutional">
+            <img
+              src="/images/institutions/bloc-marque-fse-guadeloupe.png"
+              alt="L'Europe s'engage en Guadeloupe - Région Guadeloupe - cofinancé par l'Union européenne"
+            />
           </span>
         </div>
       </div>

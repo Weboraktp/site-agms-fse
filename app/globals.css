@@ -311,10 +311,10 @@ img {
 
 .hero__logos {
   display: grid;
-  grid-template-columns: 120px minmax(260px, 340px) 120px;
-  gap: 24px;
+  grid-template-columns: 116px minmax(280px, 390px);
+  gap: clamp(22px, 4vw, 42px);
   align-items: center;
-  width: min(620px, 100%);
+  width: min(560px, 100%);
 }
 
 .hero__logos .logo-placeholder {
@@ -330,6 +330,17 @@ img {
   filter:
     drop-shadow(0 10px 18px rgba(0, 0, 0, 0.3))
     drop-shadow(0 1px 2px rgba(255, 255, 255, 0.58));
+}
+
+.hero__logos .logo-placeholder--institutional {
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  padding: 14px;
+}
+
+.hero__logos .logo-placeholder--institutional img {
+  filter: none;
 }
 
 .hero__brand-card {
@@ -447,6 +458,11 @@ img {
   width: auto;
   height: auto;
   max-height: 128px;
+}
+
+.logo-placeholder--institutional img {
+  width: min(390px, 100%);
+  height: auto;
 }
 
 .logo-placeholder--region img {
@@ -1278,10 +1294,10 @@ img {
 
 .logo-row {
   display: grid;
-  grid-template-columns: 76px minmax(150px, 190px) 76px;
-  gap: 8px;
+  grid-template-columns: 68px minmax(150px, 196px);
+  gap: 12px;
   align-items: center;
-  max-width: 366px;
+  max-width: 288px;
 }
 
 .logo-row--footer {
@@ -1305,6 +1321,11 @@ img {
   width: auto;
   height: auto;
   max-height: 75px;
+}
+
+.logo-row--footer .logo-placeholder--institutional img {
+  width: min(196px, 100%);
+  height: auto;
 }
 
 .logo-row--footer .logo-placeholder--region img {
@@ -1586,14 +1607,13 @@ img {
 
   .hero__logos,
   .logo-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 84px minmax(0, 1fr);
     width: 100%;
     max-width: none;
   }
 
-  .logo-placeholder--fse {
-    grid-column: 1 / -1;
-    order: -1;
+  .hero__logos {
+    gap: 16px;
   }
 
   .logo-placeholder--fse img {
@@ -1603,9 +1623,13 @@ img {
     max-height: 122px;
   }
 
+  .logo-placeholder--institutional img {
+    width: min(260px, 100%);
+  }
+
   .logo-placeholder--agms img {
-    width: 92px;
-    height: 92px;
+    width: 76px;
+    height: 76px;
   }
 
   .logo-placeholder--region img {
@@ -1615,7 +1639,7 @@ img {
   }
 
   .logo-row--footer {
-    grid-template-columns: 72px minmax(142px, 1fr) 72px;
+    grid-template-columns: 58px minmax(142px, 1fr);
     width: min(100%, 330px);
     max-width: 330px;
   }
@@ -1629,6 +1653,10 @@ img {
     max-width: min(160px, 100%);
     width: auto;
     max-height: 68px;
+  }
+
+  .logo-row--footer .logo-placeholder--institutional img {
+    width: min(170px, 100%);
   }
 
   .button,
