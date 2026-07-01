@@ -14,6 +14,7 @@ import {
   projectFrame,
   projectObjectives,
   projectSummary,
+  site,
   whyProjectText
 } from "@/lib/content";
 
@@ -122,10 +123,10 @@ export default function ProjetPage() {
         <div className="container cta-band">
           <div>
             <p className="eyebrow">Places limitées</p>
-            <h2>60 étudiants peuvent être accompagnés dans le cadre du dispositif.</h2>
+            <h2>60 étudiants peuvent être accompagnés dans le cadre du dispositif gratuit sous conditions.</h2>
           </div>
-          <Link className="button button--primary" href="/candidature">
-            Candidater
+          <Link className="button button--primary" href={site.questionnaireUrl}>
+            Trouver ma voie
             <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>

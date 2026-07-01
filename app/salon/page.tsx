@@ -8,7 +8,8 @@ import {
   salonItems,
   salonProfessionalExamples,
   salonProgram,
-  salonText
+  salonText,
+  site
 } from "@/lib/content";
 
 export default function SalonPage() {
@@ -27,7 +28,7 @@ export default function SalonPage() {
             <div className="prose">
               <p>{salonText}</p>
             </div>
-            <Link className="button button--secondary button--on-light" href="/contact">
+            <Link className="button button--secondary button--on-light" href={site.questionnaireUrl}>
               <Mail size={18} aria-hidden="true" />
               Être informé du prochain salon
             </Link>
@@ -113,7 +114,7 @@ export default function SalonPage() {
             <p className="eyebrow">Acteurs éducatifs et santé</p>
             <h2>Le salon peut associer lycéens, étudiants, professionnels, centres de formation et structures d'orientation.</h2>
           </div>
-          <Link className="button button--primary" href="/contact">
+          <Link className="button button--primary" href={site.questionnaireUrl}>
             Proposer un échange
             <ArrowRight size={18} aria-hidden="true" />
           </Link>

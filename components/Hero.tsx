@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle, MapPin, ShieldCheck, Sparkles } from "lucide-react";
-import { heroHighlights } from "@/lib/content";
+import { heroHighlights, site } from "@/lib/content";
 
 export function Hero() {
   return (
@@ -9,19 +9,21 @@ export function Hero() {
         <div className="hero__grid">
           <div className="hero__copy">
             <p className="hero__kicker">AGMS — Projet FSE+ réussite éducative</p>
-            <h1>Un accompagnement gratuit pour réussir son entrée en PASS/LAS en Guadeloupe</h1>
+            <h1>Réussir PASS/LAS en Guadeloupe — trouvez la voie adaptée à votre situation</h1>
             <p className="hero__lead">
-              Un dispositif soutenu par le FSE+ et porté par l'AGMS pour lutter contre le décrochage,
-              renforcer l'orientation santé et accompagner 60 étudiants boursiers vers la réussite.
+              AGMS propose deux voies d'accompagnement : un dispositif gratuit, cofinancé par
+              l'Union européenne et la Région Guadeloupe, réservé aux étudiants éligibles sur critères
+              sociaux (boursiers, sur dossier, entretien et admission) ; et un accompagnement ouvert à
+              tous. Faites le point en 2 minutes, on vous rappelle pour vous répondre précisément.
             </p>
 
             <div className="hero__actions" aria-label="Actions principales">
-              <Link className="button button--primary" href="/candidature">
-                Candidater au dispositif
+              <Link className="button button--primary" href={site.questionnaireUrl}>
+                Trouver ma voie
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
-              <Link className="button button--secondary" href="/contact">
-                Demander des informations
+              <Link className="button button--secondary" href={site.questionnaireUrl}>
+                Remplir le questionnaire
               </Link>
               <Link className="button button--ghost" href="/projet">
                 Découvrir le projet
@@ -50,15 +52,15 @@ export function Hero() {
             </div>
             <p className="hero__badge">
               <Sparkles size={16} aria-hidden="true" />
-              Projet FSE+ contre le décrochage scolaire
+              Questionnaire d'orientation unique
             </p>
             <div className="hero__mini-stats">
-              <strong>60</strong>
-              <span>places pour les étudiants boursiers sélectionnés</span>
+              <strong>2 min</strong>
+              <span>pour faire le point sur votre situation</span>
             </div>
             <div className="hero__mini-stats hero__mini-stats--light">
-              <strong>192h</strong>
-              <span>d'accompagnement possible sur l'année</span>
+              <strong>2 voies</strong>
+              <span>gratuite sous conditions ou ouverte à tous</span>
             </div>
           </aside>
         </div>

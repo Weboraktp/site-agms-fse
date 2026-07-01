@@ -10,12 +10,12 @@ export const metadata: Metadata = {
     template: "%s | AGMS — Dispositif FSE+ PASS/LAS"
   },
   description:
-    "Site institutionnel du dispositif FSE+ porté par l'AGMS pour accompagner gratuitement 60 étudiants boursiers sélectionnés en PASS/LAS en Guadeloupe.",
+    "Site institutionnel AGMS pour orienter les étudiants PASS/LAS en Guadeloupe vers le dispositif gratuit sous conditions ou vers un accompagnement ouvert à tous.",
   metadataBase: new URL("https://agms-dispositif-fse.local"),
   openGraph: {
     title: "AGMS — Dispositif FSE+ PASS/LAS",
     description:
-      "Un accompagnement gratuit, sous réserve d'éligibilité et de sélection, pour les étudiants boursiers engagés en PASS/LAS en Guadeloupe.",
+      "Un questionnaire d'orientation pour confirmer la voie adaptée : dispositif gratuit sous conditions ou accompagnement ouvert à tous.",
     type: "website",
     locale: "fr_FR"
   }

@@ -1,5 +1,5 @@
-import { Mail, MapPin, Phone } from "lucide-react";
-import { ContactForm } from "@/components/ContactForm";
+import Link from "next/link";
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionTitle } from "@/components/SectionTitle";
 import { site } from "@/lib/content";
@@ -10,7 +10,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Contact"
         title="Demander des informations"
-        intro="Pour une candidature, une question familiale, un échange institutionnel ou une demande liée au salon des métiers de la santé."
+        intro="Pour toute question sur l'orientation PASS/LAS, le dispositif gratuit sous conditions ou la voie ouverte à tous, remplissez le questionnaire : l'équipe AGMS vous rappelle."
       />
 
       <section className="section section--white">
@@ -43,7 +43,20 @@ export default function ContactPage() {
               et dans la limite des places disponibles.
             </p>
           </div>
-          <ContactForm requestType="Demande d'informations" />
+          <aside className="info-panel">
+            <p className="eyebrow">Questionnaire unique</p>
+            <h3>Trouver la voie adaptée</h3>
+            <p>
+              Pour connaître votre éligibilité ou poser une question sur l'accompagnement, utilisez le
+              questionnaire d'orientation. L'équipe AGMS vous recontactera à partir des éléments transmis.
+            </p>
+            <div className="section-actions">
+              <Link className="button button--primary" href={site.questionnaireUrl}>
+                Accéder au questionnaire
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+            </div>
+          </aside>
         </div>
       </section>
     </>

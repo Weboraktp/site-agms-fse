@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { FeatureCard } from "@/components/FeatureCard";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionTitle } from "@/components/SectionTitle";
-import { accompanimentFeatures, accompanimentText, methodPillars, supportCards } from "@/lib/content";
+import { accompanimentFeatures, accompanimentText, methodPillars, site, supportCards } from "@/lib/content";
 
 export default function AccompagnementPage() {
   return (
@@ -67,8 +67,8 @@ export default function AccompagnementPage() {
             <p className="eyebrow">PASS/LAS</p>
             <h2>L'accompagnement vise autant la méthode que la compréhension des matières.</h2>
           </div>
-          <Link className="button button--primary" href="/candidature">
-            Candidater au dispositif
+          <Link className="button button--primary" href={site.questionnaireUrl}>
+            Trouver ma voie
             <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>

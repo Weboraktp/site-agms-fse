@@ -1,3 +1,6 @@
+export const questionnaireUrl =
+  "https://formulaire.cc/quillforms/prepa-medecine-agms/?volet=FSE&formation=Prepa_Medecine";
+
 export const site = {
   name: "AGMS — Dispositif FSE+ PASS/LAS",
   shortName: "Dispositif FSE+ AGMS",
@@ -6,24 +9,24 @@ export const site = {
   emailLabel: "agmsmedecine@gmail.com",
   phones: ["06 90 76 65 38", "06 90 07 47 46"],
   address: "22 rue Ferdinand Forest, Jarry, 97122 Baie-Mahault",
-  candidatureEmailEnv: "CANDIDATURE_TO_EMAIL",
+  questionnaireUrl,
   nav: [
     { label: "Accueil", href: "/" },
     { label: "Le projet", href: "/projet" },
     { label: "Accompagnement", href: "/accompagnement" },
     { label: "Salon santé", href: "/salon" },
-    { label: "Candidater", href: "/candidature" },
+    { label: "Trouver ma voie", href: questionnaireUrl },
     { label: "Contact", href: "/contact" }
   ]
 };
 
 export const heroHighlights = [
-  "Gratuit pour les étudiants boursiers éligibles",
-  "60 places disponibles",
-  "Projet contre le décrochage scolaire",
-  "Présentiel à Jarry",
-  "Orientation santé et PASS/LAS",
-  "Projet lancé dans le cadre du FSE+ et porté par l'AGMS"
+  "Questionnaire d'orientation en 2 minutes",
+  "Dispositif gratuit sous conditions et réservé aux étudiants éligibles",
+  "Accompagnement ouvert à tous avec Cours Médical",
+  "Rappel par l'équipe AGMS",
+  "PASS/LAS en Guadeloupe",
+  "Cofinancement Union européenne, Région Guadeloupe et FSE+"
 ];
 
 export const whyProjectText =
@@ -57,7 +60,7 @@ export const projectCards = [
 
 export const keyFigures = [
   "60 étudiants accompagnés",
-  "100 % gratuit pour les étudiants boursiers sélectionnés",
+  "100 % gratuit sous conditions pour les étudiants éligibles sélectionnés",
   "Jusqu'à 192h d'accompagnement possible sur l'année",
   "Interventions auprès des élèves de Première et Terminale",
   "Organisation d'un salon des métiers de la santé",
@@ -66,26 +69,47 @@ export const keyFigures = [
 
 export const impactStats = [
   {
+    value: "2",
+    label: "voies possibles",
+    detail: "gratuite sous conditions ou ouverte à tous"
+  },
+  {
+    value: "2 min",
+    label: "pour faire le point",
+    detail: "questionnaire d'orientation unique"
+  },
+  {
     value: "60",
-    label: "places disponibles",
-    detail: "dans la limite du dispositif"
+    label: "places réservées",
+    detail: "dans le dispositif gratuit sous conditions"
   },
   {
-    value: "100 %",
-    label: "gratuit",
-    detail: "pour les étudiants boursiers sélectionnés"
-  },
-  {
-    value: "192h",
-    label: "possibles sur l'année",
-    detail: "selon le parcours d'accompagnement"
-  },
-  {
-    value: "Jarry",
-    label: "présentiel",
-    detail: "dans les locaux de l'AGMS"
+    value: "PASS/LAS",
+    label: "Guadeloupe",
+    detail: "orientation vers la voie adaptée"
   }
 ];
+
+export const orientationSteps = [
+  {
+    title: "Vous remplissez le questionnaire",
+    text: "Deux minutes suffisent pour nous donner les premiers éléments utiles à l'orientation."
+  },
+  {
+    title: "On vous rappelle",
+    text: "L'équipe AGMS échange avec vous pour comprendre votre situation et répondre précisément."
+  },
+  {
+    title: "On confirme la voie adaptée",
+    text: "Dispositif gratuit sous conditions si vous êtes éligible, ou accompagnement ouvert à tous avec Cours Médical, hors dispositif gratuit."
+  }
+];
+
+export const freePathText =
+  "Le dispositif gratuit sous conditions est réservé aux étudiants éligibles sur critères sociaux, notamment les étudiants boursiers, dans la limite des places disponibles. L'accès repose sur l'étude du dossier, un entretien et l'admission ou l'inscription en PASS/LAS.";
+
+export const openPathText =
+  "Vous n'êtes pas éligible au dispositif gratuit sous conditions ? Un accompagnement ouvert à tous existe avec Cours Médical, hors dispositif gratuit et selon ses propres modalités. Le questionnaire permet de vous orienter vers la réponse la plus adaptée.";
 
 export const methodPillars = [
   {
@@ -188,7 +212,7 @@ export const localDetails = [
 ];
 
 export const accompanimentText =
-  "Le dispositif AGMS PASS/LAS reprend une organisation pédagogique complète : préparation annuelle, stage de pré-rentrée, cours de soutien ciblés, enseignements dirigés en petits groupes, colles hebdomadaires corrigées, QCM réguliers, suivi personnalisé et méthodologie rigoureuse. L'ensemble est adapté au cadre FSE+ : gratuit pour les étudiants boursiers sélectionnés, sous réserve d'éligibilité et dans la limite des places disponibles.";
+  "Le dispositif AGMS PASS/LAS reprend une organisation pédagogique complète : préparation annuelle, stage de pré-rentrée, cours de soutien ciblés, enseignements dirigés en petits groupes, colles hebdomadaires corrigées, QCM réguliers, suivi personnalisé et méthodologie rigoureuse. Dans le cadre FSE+, la voie gratuite sous conditions est réservée aux étudiants éligibles sélectionnés, dans la limite des places disponibles.";
 
 export const accompanimentFeatures = [
   "Préparation annuelle PASS/LAS",
@@ -211,15 +235,15 @@ export const accompanimentFeatures = [
 ];
 
 export const eligibilityText =
-  "Le dispositif s'adresse principalement aux étudiants boursiers inscrits ou admis en PASS ou LAS, motivés par les études de santé et ayant besoin d'un accompagnement structuré pour réussir leur transition vers l'université, gagner en autonomie et éviter le décrochage.";
+  "Pour connaître votre éligibilité, remplissez le questionnaire d'orientation. À partir de ces éléments, l'équipe AGMS vous rappelle pour échanger, vérifier votre situation et confirmer si vous relevez du dispositif gratuit sous conditions ou d'un accompagnement ouvert à tous.";
 
 export const eligibilityCriteria = [
-  "Être inscrit ou admis en PASS ou LAS",
-  "Être boursier ou pouvoir justifier d'une situation sociale éligible",
-  "Être motivé par les études de santé",
-  "Participer à un entretien de positionnement",
-  "Fournir les documents demandés",
-  "S'engager sérieusement dans l'accompagnement"
+  "Dispositif gratuit sous conditions réservé aux étudiants éligibles",
+  "Priorité aux étudiants boursiers ou pouvant justifier d'une situation sociale éligible",
+  "Places limitées, avec sélection sur dossier et entretien",
+  "Admission ou inscription PASS/LAS nécessaire pour intégrer l'accompagnement gratuit sous conditions",
+  "Aucun échelon de bourse n'est demandé dans le questionnaire en ligne",
+  "Une voie ouverte à tous peut être proposée avec Cours Médical si le dispositif gratuit sous conditions ne correspond pas à votre situation"
 ];
 
 export const annualTimeline = [
@@ -409,18 +433,18 @@ export const salonProgram = [
 ];
 
 export const applicationText =
-  "Les places sont limitées à 60 étudiants. Les candidatures sont étudiées selon l'éligibilité sociale, la motivation, le parcours scolaire, le besoin d'accompagnement et l'admission en PASS ou LAS.";
+  "Le questionnaire ne vaut pas admission définitive. Il sert à comprendre votre situation et à organiser un échange pour confirmer la voie adaptée : dispositif gratuit sous conditions si vous êtes éligible, ou accompagnement ouvert à tous avec Cours Médical, hors dispositif gratuit.";
 
 export const faqItems = [
   {
-    question: "Le dispositif est-il vraiment gratuit ?",
+    question: "Le dispositif gratuit est-il vraiment gratuit ?",
     answer:
-      "Oui, l'accompagnement est gratuit pour les étudiants boursiers sélectionnés, dans la limite des 60 places disponibles et sous réserve d'éligibilité."
+      "Oui, le dispositif gratuit sous conditions est réservé aux étudiants éligibles, notamment boursiers, dans la limite des 60 places disponibles et après étude du dossier."
   },
   {
-    question: "Qui peut candidater ?",
+    question: "Comment savoir si je suis éligible ?",
     answer:
-      "Les étudiants admis ou inscrits en PASS/LAS, prioritairement boursiers, motivés par les études de santé et souhaitant bénéficier d'un accompagnement structuré."
+      "Le plus simple est de remplir le questionnaire d'orientation. L'équipe AGMS vous rappelle ensuite pour échanger et vérifier votre situation sans vous demander l'échelon de bourse en ligne."
   },
   {
     question: "Où ont lieu les cours ?",
@@ -429,7 +453,7 @@ export const faqItems = [
   },
   {
     question: "Combien de places sont disponibles ?",
-    answer: "Le dispositif prévoit 60 places au total."
+    answer: "Le dispositif gratuit sous conditions prévoit 60 places au total."
   },
   {
     question: "Que comprend l'accompagnement ?",
@@ -442,8 +466,8 @@ export const faqItems = [
       "Le dispositif concerne les parcours PASS/LAS, qui permettent d'accéder aux filières de santé : médecine, maïeutique, odontologie, pharmacie et kinésithérapie selon les parcours."
   },
   {
-    question: "Comment candidater ?",
+    question: "Comment être orienté ?",
     answer:
-      "Il suffit de remplir le formulaire de contact ou de candidature. L'équipe AGMS recontacte ensuite l'étudiant pour vérifier l'éligibilité et organiser la suite."
+      "Il suffit de remplir le questionnaire unique. L'équipe AGMS recontacte ensuite l'étudiant ou sa famille pour confirmer la voie adaptée."
   }
 ];

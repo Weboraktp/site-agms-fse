@@ -8,7 +8,10 @@ export function Footer() {
       <div className="container footer-grid">
         <div>
           <p className="footer-title">{site.agms}</p>
-          <p>Projet FSE+ contre le décrochage scolaire et accompagnement PASS/LAS</p>
+          <p>
+            Projet FSE+ contre le décrochage scolaire et accompagnement PASS/LAS, cofinancé par
+            l'Union européenne et la Région Guadeloupe.
+          </p>
           <div className="logo-row logo-row--footer" aria-label="Logos institutionnels du dispositif">
             <span className="logo-placeholder logo-placeholder--agms">
               <img src="/images/agms-logo.png" alt="AGMS" />
@@ -40,7 +43,7 @@ export function Footer() {
         <div className="footer-links">
           <Link href="/mentions-legales">Mentions légales</Link>
           <Link href="/confidentialite">Politique de confidentialité</Link>
-          <Link href="/candidature">Candidater</Link>
+          <Link href={site.questionnaireUrl}>Trouver ma voie</Link>
         </div>
       </div>
     </footer>

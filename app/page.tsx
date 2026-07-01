@@ -1,21 +1,24 @@
 import Link from "next/link";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { FeatureCard } from "@/components/FeatureCard";
 import { Hero } from "@/components/Hero";
 import { SectionTitle } from "@/components/SectionTitle";
 import {
   agmsText,
   applicationText,
-  eligibilityText,
   fseTexts,
+  freePathText,
   impactStats,
   methodPillars,
   accompanimentFeatures,
   accompanimentText,
+  openPathText,
+  orientationSteps,
   projectCards,
   projectFrame,
   projectSummary,
   salonText,
+  site,
   supportCards,
   whyProjectText
 } from "@/lib/content";
@@ -34,6 +37,32 @@ export default function HomePage() {
               <small>{stat.detail}</small>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section section--white">
+        <div className="container">
+          <SectionTitle
+            eyebrow="Comment ça marche"
+            title="Un questionnaire unique pour vous orienter"
+            intro="Le questionnaire sert à comprendre votre situation. Il ne remplace pas l'échange avec l'équipe AGMS : c'est justement cet échange qui permet de confirmer l'éligibilité et la voie adaptée."
+            align="center"
+          />
+          <div className="candidate-flow">
+            {orientationSteps.map((step, index) => (
+              <article className="candidate-step" key={step.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="section-actions section-actions--center">
+            <Link className="button button--primary" href={site.questionnaireUrl}>
+              Trouver ma voie
+              <ArrowRight size={18} aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -135,25 +164,27 @@ export default function HomePage() {
       <section className="section section--accent">
         <div className="container two-column">
           <div>
-            <SectionTitle eyebrow="Pour qui ?" title="Un dispositif pour les étudiants boursiers PASS/LAS sélectionnés" />
+            <SectionTitle
+              eyebrow="Deux voies"
+              title="Une orientation honnête selon votre situation"
+            />
             <div className="prose">
-              <p>{eligibilityText}</p>
+              <h3>Le dispositif gratuit sous conditions</h3>
+              <p>{freePathText}</p>
               <p className="important-box">
-                Le dispositif est gratuit pour les étudiants boursiers sélectionnés, dans la limite de
-                60 places disponibles.
+                Le dispositif gratuit sous conditions est réservé aux étudiants éligibles, dans la
+                limite des places disponibles et après confirmation par l'équipe AGMS.
               </p>
             </div>
           </div>
           <aside className="info-panel">
-            <h3>Candidature</h3>
+            <h3>Questionnaire d'orientation</h3>
             <p>{applicationText}</p>
+            <p>{openPathText}</p>
             <div className="section-actions">
-              <Link className="button button--primary" href="/candidature">
-                Candidater au dispositif
+              <Link className="button button--primary" href={site.questionnaireUrl}>
+                Trouver ma voie
                 <ArrowRight size={18} aria-hidden="true" />
-              </Link>
-              <Link className="button button--on-light" href="/contact">
-                Poser une question
               </Link>
             </div>
           </aside>
@@ -165,7 +196,7 @@ export default function HomePage() {
           <SectionTitle
             eyebrow="Aller plus loin"
             title="Chaque sujet a sa page dédiée"
-            intro="L'accueil oriente rapidement ; les pages internes détaillent l'organisation annuelle, le contenu de l'accompagnement, le salon santé et la candidature."
+            intro="L'accueil oriente rapidement ; les pages internes détaillent l'organisation annuelle, le contenu de l'accompagnement, le salon santé et le questionnaire d'orientation."
             align="center"
           />
           <div className="preview-grid">
@@ -200,17 +231,13 @@ export default function HomePage() {
       <section className="section section--cta">
         <div className="container cta-band">
           <div>
-            <p className="eyebrow">Places limitées</p>
-            <h2>Un doute sur l'éligibilité ou les documents à fournir ? L'équipe peut vous orienter.</h2>
+            <p className="eyebrow">Orientation</p>
+            <h2>Pour connaître votre éligibilité, commencez par le questionnaire : l'équipe AGMS vous rappelle ensuite.</h2>
           </div>
           <div className="cta-band__actions">
-            <Link className="button button--primary" href="/candidature">
-              Candidater
+            <Link className="button button--primary" href={site.questionnaireUrl}>
+              Trouver ma voie
               <ArrowRight size={18} aria-hidden="true" />
-            </Link>
-            <Link className="button button--secondary" href="/contact">
-              <Mail size={18} aria-hidden="true" />
-              Demander des informations
             </Link>
           </div>
         </div>
