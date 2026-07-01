@@ -59,7 +59,7 @@ export const projectCards = [
 ];
 
 export const keyFigures = [
-  "60 étudiants accompagnés",
+  "20 places disponibles",
   "100 % gratuit sous conditions pour les étudiants éligibles sélectionnés",
   "Jusqu'à 192h d'accompagnement possible sur l'année",
   "Interventions auprès des élèves de Première et Terminale",
@@ -79,7 +79,7 @@ export const impactStats = [
     detail: "questionnaire d'orientation unique"
   },
   {
-    value: "60",
+    value: "20",
     label: "places réservées",
     detail: "dans le dispositif gratuit sous conditions"
   },
@@ -106,7 +106,7 @@ export const orientationSteps = [
 ];
 
 export const freePathText =
-  "Le dispositif gratuit sous conditions est réservé aux étudiants éligibles sur critères sociaux et pédagogiques, notamment la situation de bourse, le dossier scolaire, les résultats au bac, l'entretien et l'admission ou l'inscription en PASS/LAS, dans la limite des places disponibles.";
+  "Le dispositif gratuit sous conditions est réservé aux étudiants éligibles sur critères sociaux et pédagogiques, notamment la situation de bourse, le dossier scolaire, les résultats au bac, l'entretien et l'admission ou l'inscription en PASS/LAS, dans la limite des 20 places disponibles.";
 
 export const openPathText =
   "Vous n'êtes pas éligible au dispositif gratuit sous conditions ? Un accompagnement payant ouvert à tous existe avec Cours Médical, hors dispositif gratuit et selon ses propres modalités. Le questionnaire permet de vous orienter vers la réponse la plus adaptée.";
@@ -116,7 +116,7 @@ export const accessModes = [
     icon: "ShieldCheck",
     title: "Dispositif gratuit sous conditions",
     text:
-      "Voie réservée aux étudiants éligibles sur critères sociaux et pédagogiques : bourse ou situation sociale, dossier, résultats au bac, entretien, admission ou inscription PASS/LAS, dans la limite des places disponibles."
+      "Voie réservée aux étudiants éligibles sur critères sociaux et pédagogiques : bourse ou situation sociale, dossier, résultats au bac, entretien, admission ou inscription PASS/LAS, dans la limite des 20 places disponibles."
   },
   {
     icon: "GraduationCap",
@@ -187,7 +187,7 @@ export const candidateSteps = [
   {
     step: "04",
     title: "L'accompagnement démarre",
-    text: "Les étudiants sélectionnés rejoignent le dispositif dans la limite des places disponibles."
+    text: "Les étudiants sélectionnés rejoignent le dispositif dans la limite des 20 places disponibles."
   }
 ];
 
@@ -197,7 +197,7 @@ export const fseTexts = {
   support:
     "Le lancement du projet AGMS s'inscrit dans le Programme FEDER-FSE+ Guadeloupe 2021-2027, autour de la réussite éducative, de la lutte contre le décrochage universitaire et de l'orientation des élèves, étudiants et familles.",
   caution:
-    "L'accès au dispositif reste soumis à l'éligibilité, à la sélection des dossiers et à la limite des places disponibles."
+    "L'accès au dispositif reste soumis à l'éligibilité, à la sélection des dossiers et à la limite des 20 places disponibles."
 };
 
 export const agmsText =
@@ -209,7 +209,7 @@ export const projectFrame = [
     label: "Lancement du projet",
     text:
       "Le dispositif est lancé dans le cadre du FSE+. Ce cadre européen permet de soutenir une action concrète contre le décrochage scolaire et universitaire, avec une attention portée à l'orientation, à la motivation et à la réussite éducative.",
-    note: "Sous réserve d'éligibilité, de sélection et dans la limite des places disponibles."
+    note: "Sous réserve d'éligibilité, de sélection et dans la limite des 20 places disponibles."
   },
   {
     title: "Le rôle de l'AGMS",
@@ -455,7 +455,7 @@ export const faqItems = [
   {
     question: "Le dispositif gratuit est-il vraiment gratuit ?",
     answer:
-      "Oui, le dispositif gratuit sous conditions est réservé aux étudiants éligibles, notamment selon la situation de bourse, le dossier et les résultats au bac, dans la limite des 60 places disponibles et après entretien."
+      "Oui, le dispositif gratuit sous conditions est réservé aux étudiants éligibles, notamment selon la situation de bourse, le dossier et les résultats au bac, dans la limite des 20 places disponibles et après entretien."
   },
   {
     question: "Comment savoir si je suis éligible ?",
@@ -474,7 +474,7 @@ export const faqItems = [
   },
   {
     question: "Combien de places sont disponibles ?",
-    answer: "Le dispositif gratuit sous conditions prévoit 60 places au total."
+    answer: "Le dispositif gratuit sous conditions prévoit 20 places au total."
   },
   {
     question: "Que comprend l'accompagnement ?",

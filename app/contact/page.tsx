@@ -40,7 +40,7 @@ export default function ContactPage() {
             </div>
             <p className="important-box">
               Les demandes liées au dispositif sont étudiées sous réserve d'éligibilité, de sélection
-              et dans la limite des places disponibles.
+              et dans la limite des 20 places disponibles.
             </p>
           </div>
           <aside className="info-panel">
