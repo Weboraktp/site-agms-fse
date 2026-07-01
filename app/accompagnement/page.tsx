@@ -3,7 +3,14 @@ import { ArrowRight } from "lucide-react";
 import { FeatureCard } from "@/components/FeatureCard";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionTitle } from "@/components/SectionTitle";
-import { accompanimentFeatures, accompanimentText, methodPillars, site, supportCards } from "@/lib/content";
+import {
+  accessModes,
+  accompanimentFeatures,
+  accompanimentText,
+  methodPillars,
+  site,
+  supportCards
+} from "@/lib/content";
 
 export default function AccompagnementPage() {
   return (
@@ -46,6 +53,22 @@ export default function AccompagnementPage() {
       </section>
 
       <section className="section section--white">
+        <div className="container">
+          <SectionTitle
+            eyebrow="Deux voies d'accès"
+            title="Gratuit sous conditions ou payant ouvert à tous"
+            intro="Le questionnaire permet de vérifier si l'étudiant relève du dispositif gratuit sous conditions. Si ce n'est pas le cas, une solution payante peut être proposée avec Cours Médical, hors financement FSE+."
+            align="center"
+          />
+          <div className="card-grid card-grid--two">
+            {accessModes.map((mode) => (
+              <FeatureCard key={mode.title} {...mode} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container">
           <SectionTitle
             eyebrow="Méthode et suivi"

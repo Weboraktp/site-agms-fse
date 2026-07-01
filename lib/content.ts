@@ -22,8 +22,8 @@ export const site = {
 
 export const heroHighlights = [
   "Questionnaire d'orientation en 2 minutes",
-  "Dispositif gratuit sous conditions et réservé aux étudiants éligibles",
-  "Accompagnement ouvert à tous avec Cours Médical",
+  "Dispositif gratuit sous conditions sociales et pédagogiques",
+  "Accompagnement payant ouvert à tous avec Cours Médical",
   "Rappel par l'équipe AGMS",
   "PASS/LAS en Guadeloupe",
   "Cofinancement Union européenne, Région Guadeloupe et FSE+"
@@ -71,7 +71,7 @@ export const impactStats = [
   {
     value: "2",
     label: "voies possibles",
-    detail: "gratuite sous conditions ou ouverte à tous"
+    detail: "gratuite sous conditions ou payante ouverte à tous"
   },
   {
     value: "2 min",
@@ -101,15 +101,30 @@ export const orientationSteps = [
   },
   {
     title: "On confirme la voie adaptée",
-    text: "Dispositif gratuit sous conditions si vous êtes éligible, ou accompagnement ouvert à tous avec Cours Médical, hors dispositif gratuit."
+    text: "Dispositif gratuit sous conditions si vous êtes éligible, ou accompagnement payant ouvert à tous avec Cours Médical, hors dispositif gratuit."
   }
 ];
 
 export const freePathText =
-  "Le dispositif gratuit sous conditions est réservé aux étudiants éligibles sur critères sociaux, notamment les étudiants boursiers, dans la limite des places disponibles. L'accès repose sur l'étude du dossier, un entretien et l'admission ou l'inscription en PASS/LAS.";
+  "Le dispositif gratuit sous conditions est réservé aux étudiants éligibles sur critères sociaux et pédagogiques, notamment la situation de bourse, le dossier scolaire, les résultats au bac, l'entretien et l'admission ou l'inscription en PASS/LAS, dans la limite des places disponibles.";
 
 export const openPathText =
-  "Vous n'êtes pas éligible au dispositif gratuit sous conditions ? Un accompagnement ouvert à tous existe avec Cours Médical, hors dispositif gratuit et selon ses propres modalités. Le questionnaire permet de vous orienter vers la réponse la plus adaptée.";
+  "Vous n'êtes pas éligible au dispositif gratuit sous conditions ? Un accompagnement payant ouvert à tous existe avec Cours Médical, hors dispositif gratuit et selon ses propres modalités. Le questionnaire permet de vous orienter vers la réponse la plus adaptée.";
+
+export const accessModes = [
+  {
+    icon: "ShieldCheck",
+    title: "Dispositif gratuit sous conditions",
+    text:
+      "Voie réservée aux étudiants éligibles sur critères sociaux et pédagogiques : bourse ou situation sociale, dossier, résultats au bac, entretien, admission ou inscription PASS/LAS, dans la limite des places disponibles."
+  },
+  {
+    icon: "GraduationCap",
+    title: "Accompagnement payant ouvert à tous",
+    text:
+      "Pour les étudiants qui ne relèvent pas du dispositif gratuit sous conditions, une voie payante peut être proposée avec Cours Médical, hors financement FSE+ et selon ses modalités propres."
+  }
+];
 
 export const methodPillars = [
   {
@@ -156,13 +171,13 @@ export const projectObjectives = [
 export const candidateSteps = [
   {
     step: "01",
-    title: "Je prends contact",
-    text: "L'étudiant ou sa famille complète le formulaire ou demande des informations."
+    title: "Je remplis le questionnaire",
+    text: "L'étudiant ou sa famille transmet les premiers éléments utiles pour comprendre la situation."
   },
   {
     step: "02",
     title: "L'équipe vérifie l'éligibilité",
-    text: "Le dossier est étudié selon la situation sociale, le parcours, la motivation et l'admission PASS/LAS."
+    text: "Le dossier est étudié selon la situation sociale, la bourse, les résultats au bac, le parcours, la motivation et l'admission PASS/LAS."
   },
   {
     step: "03",
@@ -212,7 +227,7 @@ export const localDetails = [
 ];
 
 export const accompanimentText =
-  "Le dispositif AGMS PASS/LAS reprend une organisation pédagogique complète : préparation annuelle, stage de pré-rentrée, cours de soutien ciblés, enseignements dirigés en petits groupes, colles hebdomadaires corrigées, QCM réguliers, suivi personnalisé et méthodologie rigoureuse. Dans le cadre FSE+, la voie gratuite sous conditions est réservée aux étudiants éligibles sélectionnés, dans la limite des places disponibles.";
+  "L'accompagnement PASS/LAS reprend une organisation pédagogique complète : préparation annuelle, stage de pré-rentrée, cours de soutien ciblés, enseignements dirigés en petits groupes, colles hebdomadaires corrigées, QCM réguliers, suivi personnalisé et méthodologie rigoureuse. Dans le cadre FSE+, la voie gratuite sous conditions est réservée aux étudiants éligibles sélectionnés selon des critères sociaux et pédagogiques. Si l'étudiant n'est pas éligible, une voie payante ouverte à tous peut être proposée avec Cours Médical, hors dispositif gratuit.";
 
 export const accompanimentFeatures = [
   "Préparation annuelle PASS/LAS",
@@ -235,15 +250,16 @@ export const accompanimentFeatures = [
 ];
 
 export const eligibilityText =
-  "Pour connaître votre éligibilité, remplissez le questionnaire d'orientation. À partir de ces éléments, l'équipe AGMS vous rappelle pour échanger, vérifier votre situation et confirmer si vous relevez du dispositif gratuit sous conditions ou d'un accompagnement ouvert à tous.";
+  "Pour connaître votre éligibilité, remplissez le questionnaire d'orientation. À partir de ces éléments, l'équipe AGMS vous rappelle pour échanger, vérifier votre situation et confirmer si vous relevez du dispositif gratuit sous conditions ou d'un accompagnement payant ouvert à tous.";
 
 export const eligibilityCriteria = [
   "Dispositif gratuit sous conditions réservé aux étudiants éligibles",
-  "Priorité aux étudiants boursiers ou pouvant justifier d'une situation sociale éligible",
+  "Critères sociaux, notamment bourse ou situation sociale éligible",
+  "Étude du dossier scolaire et des résultats au bac",
   "Places limitées, avec sélection sur dossier et entretien",
   "Admission ou inscription PASS/LAS nécessaire pour intégrer l'accompagnement gratuit sous conditions",
   "Aucun échelon de bourse n'est demandé dans le questionnaire en ligne",
-  "Une voie ouverte à tous peut être proposée avec Cours Médical si le dispositif gratuit sous conditions ne correspond pas à votre situation"
+  "Une voie payante ouverte à tous peut être proposée avec Cours Médical si le dispositif gratuit sous conditions ne correspond pas à votre situation"
 ];
 
 export const annualTimeline = [
@@ -433,18 +449,23 @@ export const salonProgram = [
 ];
 
 export const applicationText =
-  "Le questionnaire ne vaut pas admission définitive. Il sert à comprendre votre situation et à organiser un échange pour confirmer la voie adaptée : dispositif gratuit sous conditions si vous êtes éligible, ou accompagnement ouvert à tous avec Cours Médical, hors dispositif gratuit.";
+  "Le questionnaire ne vaut pas admission définitive. Il sert à comprendre votre situation et à organiser un échange pour confirmer la voie adaptée : dispositif gratuit sous conditions si vous êtes éligible, ou accompagnement payant ouvert à tous avec Cours Médical, hors dispositif gratuit.";
 
 export const faqItems = [
   {
     question: "Le dispositif gratuit est-il vraiment gratuit ?",
     answer:
-      "Oui, le dispositif gratuit sous conditions est réservé aux étudiants éligibles, notamment boursiers, dans la limite des 60 places disponibles et après étude du dossier."
+      "Oui, le dispositif gratuit sous conditions est réservé aux étudiants éligibles, notamment selon la situation de bourse, le dossier et les résultats au bac, dans la limite des 60 places disponibles et après entretien."
   },
   {
     question: "Comment savoir si je suis éligible ?",
     answer:
       "Le plus simple est de remplir le questionnaire d'orientation. L'équipe AGMS vous rappelle ensuite pour échanger et vérifier votre situation sans vous demander l'échelon de bourse en ligne."
+  },
+  {
+    question: "Que se passe-t-il si je ne suis pas éligible au gratuit ?",
+    answer:
+      "Une voie payante ouverte à tous peut être proposée avec Cours Médical, hors dispositif gratuit FSE+. Le questionnaire sert justement à orienter chaque famille vers la réponse adaptée."
   },
   {
     question: "Où ont lieu les cours ?",

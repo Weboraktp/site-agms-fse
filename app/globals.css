@@ -687,8 +687,16 @@ img {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.card-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .card-grid--three {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.access-mode-grid {
+  margin-top: 28px;
 }
 
 .feature-card,
@@ -1562,6 +1570,7 @@ img {
   }
 
   .card-grid--four,
+  .card-grid--two,
   .card-grid--three,
   .stats-grid,
   .impact-ribbon__grid,
@@ -1702,6 +1711,7 @@ img {
   }
 
   .card-grid--four,
+  .card-grid--two,
   .card-grid--three,
   .stats-grid,
   .impact-ribbon__grid,

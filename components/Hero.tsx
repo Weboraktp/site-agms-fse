@@ -13,8 +13,9 @@ export function Hero() {
             <p className="hero__lead">
               AGMS propose deux voies d'accompagnement : un dispositif gratuit, cofinancé par
               l'Union européenne et la Région Guadeloupe, réservé aux étudiants éligibles sur critères
-              sociaux (boursiers, sur dossier, entretien et admission) ; et un accompagnement ouvert à
-              tous. Faites le point en 2 minutes, on vous rappelle pour vous répondre précisément.
+              sociaux et pédagogiques (bourse ou situation sociale, dossier, résultats au bac,
+              entretien et admission PASS/LAS) ; et un accompagnement payant ouvert à tous avec Cours
+              Médical. Faites le point en 2 minutes, on vous rappelle pour vous répondre précisément.
             </p>
 
             <div className="hero__actions" aria-label="Actions principales">
@@ -60,7 +61,7 @@ export function Hero() {
             </div>
             <div className="hero__mini-stats hero__mini-stats--light">
               <strong>2 voies</strong>
-              <span>gratuite sous conditions ou ouverte à tous</span>
+              <span>gratuite sous conditions ou payante ouverte à tous</span>
             </div>
           </aside>
         </div>

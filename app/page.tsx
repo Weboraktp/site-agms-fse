@@ -4,6 +4,7 @@ import { FeatureCard } from "@/components/FeatureCard";
 import { Hero } from "@/components/Hero";
 import { SectionTitle } from "@/components/SectionTitle";
 import {
+  accessModes,
   agmsText,
   applicationText,
   fseTexts,
@@ -172,13 +173,13 @@ export default function HomePage() {
               <h3>Le dispositif gratuit sous conditions</h3>
               <p>{freePathText}</p>
               <p className="important-box">
-                Le dispositif gratuit sous conditions est réservé aux étudiants éligibles, dans la
-                limite des places disponibles et après confirmation par l'équipe AGMS.
+                L'éligibilité tient compte notamment des critères sociaux, de la bourse, du dossier,
+                des résultats au bac, de l'entretien et de l'admission PASS/LAS.
               </p>
             </div>
           </div>
           <aside className="info-panel">
-            <h3>Questionnaire d'orientation</h3>
+            <h3>Accompagnement payant possible</h3>
             <p>{applicationText}</p>
             <p>{openPathText}</p>
             <div className="section-actions">
@@ -188,6 +189,13 @@ export default function HomePage() {
               </Link>
             </div>
           </aside>
+        </div>
+        <div className="container">
+          <div className="card-grid card-grid--two access-mode-grid">
+            {accessModes.map((mode) => (
+              <FeatureCard key={mode.title} {...mode} />
+            ))}
+          </div>
         </div>
       </section>
 
