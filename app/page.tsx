@@ -151,7 +151,7 @@ export default function HomePage() {
           <SectionTitle
             eyebrow="Repères pédagogiques"
             title="Ce qui structure l'accompagnement"
-            intro="L'accueil reste volontairement synthétique ; le détail des cours, TD, colles et stages se trouve dans la page accompagnement."
+            intro="L'accueil reste volontairement synthétique ; le détail des cours, TD, colles et méthodes de travail se trouve dans la page accompagnement."
             align="center"
           />
           <div className="pillar-track pillar-track--home">
@@ -210,7 +210,7 @@ export default function HomePage() {
           <div className="preview-grid">
             <article className="preview-card">
               <h3>Organisation annuelle</h3>
-              <p>Pré-rentrée, soutien régulier, révisions, suivi et temps d'orientation.</p>
+              <p>Méthodologie, soutien régulier, révisions, suivi et temps d'orientation.</p>
               <Link className="inline-link" href="/projet">
                 Voir le calendrier
                 <ArrowRight size={16} aria-hidden="true" />

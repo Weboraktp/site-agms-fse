@@ -18,7 +18,7 @@ export default function AccompagnementPage() {
       <PageHeader
         eyebrow="Accompagnement"
         title="Accompagnement PASS/LAS — dispositif AGMS"
-        intro="Un dispositif local, humain et structuré qui combine préparation annuelle, stage de pré-rentrée, soutien ciblé, colles, QCM, suivi personnalisé et méthode."
+        intro="Un dispositif local, humain et structuré qui combine préparation annuelle, soutien ciblé, colles, QCM, suivi personnalisé et méthode."
       />
 
       <section className="section section--white">

@@ -48,8 +48,8 @@ export const projectCards = [
   },
   {
     icon: "Clock",
-    title: "Stages intensifs et méthodologie",
-    text: "Pré-rentrée, organisation, planification, mémorisation active, révisions et consolidation des matières clés."
+    title: "Révisions et méthodologie",
+    text: "Organisation, planification, mémorisation active, révisions et consolidation des matières clés."
   },
   {
     icon: "Stethoscope",
@@ -227,11 +227,10 @@ export const localDetails = [
 ];
 
 export const accompanimentText =
-  "L'accompagnement PASS/LAS reprend une organisation pédagogique complète : préparation annuelle, stage de pré-rentrée, cours de soutien ciblés, enseignements dirigés en petits groupes, colles hebdomadaires corrigées, QCM réguliers, suivi personnalisé et méthodologie rigoureuse. Dans le cadre FSE+, la voie gratuite sous conditions est réservée aux étudiants éligibles sélectionnés selon des critères sociaux et pédagogiques. Si l'étudiant n'est pas éligible, une voie payante ouverte à tous peut être proposée avec Cours Médical, hors dispositif gratuit.";
+  "L'accompagnement PASS/LAS reprend une organisation pédagogique complète : préparation annuelle, cours de soutien ciblés, enseignements dirigés en petits groupes, colles hebdomadaires corrigées, QCM réguliers, suivi personnalisé et méthodologie rigoureuse. Dans le cadre FSE+, la voie gratuite sous conditions est réservée aux étudiants éligibles sélectionnés selon des critères sociaux et pédagogiques. Si l'étudiant n'est pas éligible, une voie payante ouverte à tous peut être proposée avec Cours Médical, hors dispositif gratuit.";
 
 export const accompanimentFeatures = [
   "Préparation annuelle PASS/LAS",
-  "Stage de pré-rentrée",
   "Cours de soutien ciblés",
   "Enseignements dirigés en présentiel",
   "TD / ED en petits groupes",
@@ -277,7 +276,6 @@ export const annualTimeline = [
     period: "Août / septembre",
     title: "Démarrer avec méthode",
     items: [
-      "Stage de pré-rentrée",
       "Méthodologie",
       "Organisation",
       "Introduction aux matières",
@@ -340,8 +338,8 @@ export const supportCards = [
   },
   {
     icon: "CalendarDays",
-    title: "Stage de pré-rentrée",
-    text: "Mise en route méthodologique avant la rentrée : fonctionnement PASS/LAS, organisation, matières clés et confiance."
+    title: "Mise en route méthodologique",
+    text: "Repères sur le fonctionnement PASS/LAS, organisation, matières clés et confiance dans la méthode de travail."
   },
   {
     icon: "BookOpen",
@@ -479,7 +477,7 @@ export const faqItems = [
   {
     question: "Que comprend l'accompagnement ?",
     answer:
-      "Préparation annuelle, stage de pré-rentrée, cours de soutien ciblés, ED en petits groupes, colles corrigées, QCM, annales, suivi personnalisé, ateliers méthodologiques et accompagnement humain."
+      "Préparation annuelle, cours de soutien ciblés, ED en petits groupes, colles corrigées, QCM, annales, suivi personnalisé, ateliers méthodologiques et accompagnement humain."
   },
   {
     question: "Est-ce réservé aux étudiants en médecine ?",
