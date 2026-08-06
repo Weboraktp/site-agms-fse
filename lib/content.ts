@@ -16,6 +16,7 @@ export const site = {
     { label: "Accompagnement", href: "/accompagnement" },
     { label: "Salon santé", href: "/salon" },
     { label: "Trouver ma voie", href: questionnaireUrl },
+    { label: "Recrutement", href: "/recrutement" },
     { label: "Contact", href: "/contact" }
   ]
 };
