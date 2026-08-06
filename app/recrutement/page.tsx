@@ -54,10 +54,10 @@ export default function RecrutementPage() {
             <div className="section-actions">
               <a
                 className="button button--primary"
-                href={`mailto:${site.email}?subject=Candidature tuteur — Dispositif FSE%2B AGMS`}
+                href={`mailto:${site.recruitmentEmail}?subject=Candidature tuteur — Dispositif FSE%2B AGMS`}
               >
                 <Mail size={18} aria-hidden="true" />
-                {site.email}
+                {site.recruitmentEmail}
               </a>
             </div>
           </aside>

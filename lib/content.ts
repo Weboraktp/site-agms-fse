@@ -7,6 +7,7 @@ export const site = {
   agms: "AGMS — Association Guadeloupéenne du Médico-Social",
   email: "agmsmedecine@gmail.com",
   emailLabel: "agmsmedecine@gmail.com",
+  recruitmentEmail: "coursmedical.caraibes@gmail.com",
   phones: ["06 90 76 65 38", "06 90 07 47 46"],
   address: "22 rue Ferdinand Forest, Jarry, 97122 Baie-Mahault",
   questionnaireUrl,
