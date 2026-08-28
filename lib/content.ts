@@ -5,8 +5,8 @@ export const site = {
   name: "AGMS — Dispositif FSE+ PASS/LAS",
   shortName: "Dispositif FSE+ AGMS",
   agms: "AGMS — Association Guadeloupéenne du Médico-Social",
-  email: "coursmedical.caraibes@gmail.com",
-  emailLabel: "coursmedical.caraibes@gmail.com",
+  email: "contact@dispositif-agms.fr",
+  emailLabel: "contact@dispositif-agms.fr",
   phones: ["06 90 76 65 38", "06 90 07 47 46"],
   address: "22 rue Ferdinand Forest, Jarry, 97122 Baie-Mahault",
   questionnaireUrl,
@@ -248,6 +248,43 @@ export const accompanimentFeatures = [
   "BU virtuelle",
   "Cadre de travail en présentiel à Jarry"
 ];
+
+export const stageRentreeText =
+  "Le stage de rentrée vient de se dérouler dans les locaux de l'AGMS à Jarry. Pendant une semaine, les étudiants ont découvert le fonctionnement de PASS/LAS matière par matière, construit leur emploi du temps, travaillé leurs méthodes de travail et abordé la gestion du stress, en présentiel et en petit groupe. Un premier temps fort avant le démarrage de l'année, pensé pour arriver à la rentrée avec des repères clairs et davantage de confiance.";
+
+export const stageRentreeHighlights = [
+  "La présentation détaillée des matières",
+  "Le cours sur la gestion du stress",
+  "L'organisation de la semaine et de l'emploi du temps",
+  "Les méthodes de travail",
+  "La découverte de différents profils et parcours"
+];
+
+export const stageRentreeHighlightsIntro =
+  "Interrogés sur les trois choses qui leur ont le plus servi pendant la semaine, les étudiants ont cité :";
+
+export const stageRentreePhoto = {
+  src: "/images/stage-rentree/stage-rentree-agms.jpg",
+  alt: "Étudiants en salle de cours pendant le stage de rentrée AGMS à Jarry",
+  caption: "Stage de rentrée — salle de travail de l'AGMS, Jarry."
+};
+
+export const stageTestimonials = [
+  {
+    quote:
+      "Merci beaucoup pour cette semaine, je ne l'ai même pas vue passer. J'ai pu prendre confiance et apprécier travailler pour moi.",
+    author: "E. C.",
+    context: "Étudiante du stage de rentrée"
+  },
+  {
+    quote: "Vous m'avez éclairée sur l'année de PASS. J'appréhende beaucoup moins.",
+    author: "L. R.",
+    context: "Étudiante du stage de rentrée"
+  }
+];
+
+export const stageRentreeCta =
+  "Les inscriptions à l'accompagnement gratuit sous conditions se poursuivent. Le questionnaire prend deux minutes : l'équipe AGMS vous rappelle ensuite pour vérifier votre éligibilité et confirmer la voie adaptée, dans la limite des 20 places disponibles.";
 
 export const eligibilityText =
   "Pour connaître votre éligibilité, remplissez le questionnaire d'orientation. À partir de ces éléments, l'équipe AGMS vous rappelle pour échanger, vérifier votre situation et confirmer si vous relevez du dispositif gratuit sous conditions ou d'un accompagnement payant ouvert à tous.";

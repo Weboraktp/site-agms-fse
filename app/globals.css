@@ -860,6 +860,126 @@ img {
   padding: 22px;
 }
 
+.stage-photo {
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: var(--shadow-sm);
+  margin: 0 0 32px;
+}
+
+.stage-photo img {
+  width: 100%;
+  height: clamp(240px, 34vw, 420px);
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.stage-photo figcaption {
+  border-top: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 13px 18px;
+}
+
+.stage-recap {
+  margin-top: 8px;
+}
+
+.stage-recap__subtitle {
+  margin: 0 0 10px;
+  color: var(--color-blue-950);
+  font-size: 1.24rem;
+  line-height: 1.25;
+}
+
+.stage-recap__intro {
+  margin: 0 0 16px;
+  color: var(--color-muted);
+}
+
+.testimonial-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.testimonial {
+  position: relative;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: var(--shadow-sm);
+  margin: 0;
+  padding: 24px 24px 20px;
+}
+
+.testimonial__mark {
+  color: rgba(31, 122, 133, 0.32);
+}
+
+.testimonial blockquote {
+  margin: 10px 0 0;
+  color: #264551;
+  font-size: 1.06rem;
+  font-weight: 750;
+  line-height: 1.55;
+}
+
+.testimonial figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  border-top: 1px solid var(--color-line);
+  margin-top: 16px;
+  padding-top: 14px;
+}
+
+.testimonial figcaption strong {
+  color: var(--color-blue-950);
+  font-weight: 850;
+}
+
+.testimonial figcaption span {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.stage-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: clamp(20px, 4vw, 48px);
+  border: 1px solid var(--color-line);
+  border-left: 4px solid var(--color-orange);
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: var(--shadow-sm);
+  margin-top: 32px;
+  padding: 28px;
+}
+
+.stage-cta h3 {
+  margin: 8px 0 10px;
+  color: var(--color-blue-950);
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  line-height: 1.25;
+}
+
+.stage-cta p:not(.eyebrow) {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.stage-cta__actions {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+}
+
 .timeline {
   position: relative;
   display: grid;
@@ -1702,8 +1822,13 @@ img {
   .two-column,
   .two-column--balanced,
   .two-column--form,
-  .project-why__layout {
+  .project-why__layout,
+  .stage-cta {
     grid-template-columns: 1fr;
+  }
+
+  .stage-cta__actions {
+    justify-items: stretch;
   }
 
   .project-why__intro {

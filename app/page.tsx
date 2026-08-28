@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Quote } from "lucide-react";
 import { FeatureCard } from "@/components/FeatureCard";
 import { Hero } from "@/components/Hero";
 import { SectionTitle } from "@/components/SectionTitle";
@@ -20,6 +20,12 @@ import {
   projectSummary,
   salonText,
   site,
+  stageRentreeCta,
+  stageRentreeHighlights,
+  stageRentreeHighlightsIntro,
+  stageRentreePhoto,
+  stageRentreeText,
+  stageTestimonials,
   supportCards,
   whyProjectText
 } from "@/lib/content";
@@ -63,6 +69,70 @@ export default function HomePage() {
               Trouver ma voie
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--accent" id="stage-rentree">
+        <div className="container">
+          <SectionTitle
+            eyebrow="Actualité"
+            title="Retour sur le stage de rentrée"
+            intro={stageRentreeText}
+            align="center"
+          />
+          <figure className="stage-photo">
+            <img
+              src={stageRentreePhoto.src}
+              alt={stageRentreePhoto.alt}
+              width={1800}
+              height={1200}
+              loading="lazy"
+            />
+            <figcaption>{stageRentreePhoto.caption}</figcaption>
+          </figure>
+          <div className="two-column two-column--balanced stage-recap">
+            <div>
+              <h3 className="stage-recap__subtitle">Ce qui leur a le plus servi</h3>
+              <p className="stage-recap__intro">{stageRentreeHighlightsIntro}</p>
+              <ul className="check-list">
+                {stageRentreeHighlights.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="stage-recap__subtitle">Ce qu'ils en disent</h3>
+              <div className="testimonial-stack">
+                {stageTestimonials.map((testimonial) => (
+                  <figure className="testimonial" key={testimonial.author}>
+                    <Quote className="testimonial__mark" size={26} aria-hidden="true" />
+                    <blockquote>{testimonial.quote}</blockquote>
+                    <figcaption>
+                      <strong>{testimonial.author}</strong>
+                      <span>{testimonial.context}</span>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="stage-cta">
+            <div>
+              <p className="eyebrow">Inscriptions</p>
+              <h3>Rejoindre l'accompagnement gratuit sous conditions</h3>
+              <p>{stageRentreeCta}</p>
+            </div>
+            <div className="stage-cta__actions">
+              <Link className="button button--primary" href={site.questionnaireUrl}>
+                Candidater au dispositif gratuit
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+              <Link className="inline-link" href="/accompagnement">
+                Voir le détail de l'accompagnement
+                <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
