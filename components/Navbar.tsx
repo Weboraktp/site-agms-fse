@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { GraduationCap, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { site } from "@/lib/content";
+import { espaceEtudiantUrl, site } from "@/lib/content";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -47,6 +47,11 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
+
+        <a className="nav-cta button" href={espaceEtudiantUrl} onClick={() => setOpen(false)}>
+          <GraduationCap size={18} aria-hidden="true" />
+          Accès étudiants
+        </a>
         </div>
       </nav>
     </header>
