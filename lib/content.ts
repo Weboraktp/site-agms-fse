@@ -1,5 +1,5 @@
 /** Espace étudiant en ligne (plateforme de cours, QCM, forum et agenda). */
-export const espaceEtudiantUrl = "https://cours-medical-espace-etudiant.vercel.app";
+export const espaceEtudiantUrl = "https://espace.coursmedical.fr";
 
 export const questionnaireUrl =
   "https://formulaire.cc/quillforms/prepa-medecine-agms/?volet=FSE&formation=Prepa_Medecine";
