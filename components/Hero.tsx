@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle, MapPin, ShieldCheck, Sparkles } from "lucide-react";
-import { heroHighlights, site } from "@/lib/content";
+import { heroHighlights, preinscription, site } from "@/lib/content";
 
 export function Hero() {
   return (
@@ -8,6 +8,11 @@ export function Hero() {
       <div className="container hero__content">
         <div className="hero__grid">
           <div className="hero__copy">
+            <Link className="hero__announce" href={site.preinscriptionUrl}>
+              <span className="hero__announce-dot" aria-hidden="true" />
+              Pré-inscriptions {preinscription.season}
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
             <p className="hero__kicker">AGMS — Projet FSE+ réussite éducative</p>
             <h1>Réussir PASS/LAS en Guadeloupe — trouvez la voie adaptée à votre situation</h1>
             <p className="hero__lead">

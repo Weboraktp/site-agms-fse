@@ -13,11 +13,14 @@ export const site = {
   phones: ["06 90 76 65 38", "06 90 07 47 46"],
   address: "22 rue Ferdinand Forest, Jarry, 97122 Baie-Mahault",
   questionnaireUrl,
+  preinscriptionUrl: "/pre-inscription",
   nav: [
     { label: "Accueil", href: "/" },
     { label: "Le projet", href: "/projet" },
     { label: "Accompagnement", href: "/accompagnement" },
     { label: "Salon santé", href: "/salon" },
+    // Tiret insécable (U+2011) : évite la coupure « Pré- / inscription » dans le menu.
+    { label: "Pré‑inscription", href: "/pre-inscription" },
     { label: "Trouver ma voie", href: questionnaireUrl },
     { label: "Recrutement", href: "/recrutement" },
     { label: "Contact", href: "/contact" }
@@ -288,6 +291,25 @@ export const stageTestimonials = [
 
 export const stageRentreeCta =
   "Les inscriptions à l'accompagnement gratuit sous conditions se poursuivent. Le questionnaire prend deux minutes : l'équipe AGMS vous rappelle ensuite pour vérifier votre éligibilité et confirmer la voie adaptée, dans la limite des 20 places disponibles.";
+
+/** Pré-inscriptions : la date d'ouverture est contrôlée côté serveur (lib/preinscription-server.ts). */
+export const preinscription = {
+  season: "rentrée 2027-2028",
+  openingLabel: "jeudi 1er octobre 2026",
+  steps: [
+    "Vous remplissez le formulaire en 2 minutes.",
+    "L'équipe AGMS vous recontacte pour faire le point sur votre projet et répondre à vos questions.",
+    "Nous vous orientons vers la voie adaptée : dispositif gratuit sous conditions ou accompagnement payant ouvert à tous."
+  ],
+  notice:
+    "La pré-inscription ne vaut pas inscription définitive. L'accès au dispositif gratuit reste soumis à l'éligibilité et à la sélection, dans la limite des places disponibles.",
+  situations: [
+    "Lycéen·ne en Terminale",
+    "Étudiant·e en PASS ou LAS",
+    "En réorientation",
+    "Autre situation"
+  ]
+};
 
 export const eligibilityText =
   "Pour connaître votre éligibilité, remplissez le questionnaire d'orientation. À partir de ces éléments, l'équipe AGMS vous rappelle pour échanger, vérifier votre situation et confirmer si vous relevez du dispositif gratuit sous conditions ou d'un accompagnement payant ouvert à tous.";

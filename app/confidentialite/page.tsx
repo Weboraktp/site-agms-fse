@@ -25,6 +25,20 @@ export default function ConfidentialitePage() {
             échange avec l'équipe AGMS.
           </p>
 
+          <SectionTitle title="Pré-inscriptions" />
+          <p>
+            Le formulaire de pré-inscription collecte le prénom, le nom, l'adresse e-mail, le numéro
+            de téléphone, la situation de l'étudiant, l'établissement actuel et un éventuel message.
+            Ces informations servent uniquement à recontacter la personne au sujet de sa
+            pré-inscription.
+          </p>
+          <p>
+            Elles sont enregistrées dans un espace de stockage privé situé dans l'Union européenne,
+            accessible uniquement à l'équipe AGMS, et ne sont jamais transmises à des tiers. Elles
+            sont conservées le temps nécessaire au traitement de la pré-inscription et peuvent être
+            modifiées ou supprimées sur simple demande.
+          </p>
+
           <SectionTitle title="Finalité" />
           <p>
             Ces informations sont utilisées pour répondre aux demandes, vérifier l'éligibilité

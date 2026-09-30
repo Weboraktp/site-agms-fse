@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionTitle } from "@/components/SectionTitle";
-import { site } from "@/lib/content";
+import { preinscription, site } from "@/lib/content";
 
 export default function ContactPage() {
   return (
@@ -42,6 +42,14 @@ export default function ContactPage() {
               Les demandes liées au dispositif sont étudiées sous réserve d'éligibilité, de sélection
               et dans la limite des 20 places disponibles.
             </p>
+            <div className="info-panel contact-preinscription">
+              <p className="eyebrow">Pré-inscriptions {preinscription.season}</p>
+              <p>Vous visez PASS ou LAS à la rentrée 2027 ? Pré-inscrivez-vous en 2 minutes.</p>
+              <Link className="inline-link" href={site.preinscriptionUrl}>
+                Accéder à la pré-inscription
+                <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+            </div>
           </div>
           <aside className="info-panel">
             <p className="eyebrow">Questionnaire unique</p>
