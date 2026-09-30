@@ -11,7 +11,12 @@ export const metadata: Metadata = {
   },
   description:
     "Site institutionnel AGMS pour orienter les étudiants PASS/LAS en Guadeloupe vers le dispositif gratuit sous conditions ou vers un accompagnement payant ouvert à tous.",
-  metadataBase: new URL("https://agms-dispositif-fse.local"),
+  metadataBase: new URL("https://www.dispositif-agms.fr"),
+  verification: {
+    other: {
+      "facebook-domain-verification": "gtt8rf3t5ki6u2in44e1ld12tsq1g2"
+    }
+  },
   openGraph: {
     title: "AGMS — Dispositif FSE+ PASS/LAS",
     description:
