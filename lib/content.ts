@@ -1,8 +1,15 @@
 /** Espace étudiant en ligne (plateforme de cours, QCM, forum et agenda). */
 export const espaceEtudiantUrl = "https://espace.coursmedical.fr";
 
-export const questionnaireUrl =
-  "https://formulaire.cc/quillforms/prepa-medecine-agms/?volet=FSE&formation=Prepa_Medecine";
+/** Prépa Cours Médical, ouverte à tous : l'inscription y passe par un dossier en ligne. */
+export const coursMedical = {
+  name: "Cours Médical",
+  url: "https://coursmedical.fr",
+  inscriptionUrl: "https://coursmedical.fr/inscription"
+};
+
+/** Article de fond sur la réforme : la licence portail santé remplace le PASS et la LAS en 2027. */
+export const reformArticleUrl = "/blog/fin-pass-las-2027-licence-portail-sante";
 
 export const site = {
   name: "AGMS — Dispositif FSE+ PASS/LAS",
@@ -12,32 +19,24 @@ export const site = {
   emailLabel: "contact@dispositif-agms.fr",
   phones: ["06 90 76 65 38", "06 90 07 47 46"],
   address: "22 rue Ferdinand Forest, Jarry, 97122 Baie-Mahault",
-  questionnaireUrl,
-  preinscriptionUrl: "/pre-inscription",
+  /** Page « Comment s'inscrire » : les deux voies, les étapes, la FAQ. */
+  inscriptionUrl: "/inscription",
+  /** Dossier de demande d'inscription en ligne (gratuit, sans pièce justificative). */
+  candidatureUrl: "/pre-inscription",
   nav: [
     { label: "Accueil", href: "/" },
     { label: "Le projet", href: "/projet" },
     { label: "Accompagnement", href: "/accompagnement" },
     { label: "Salon santé", href: "/salon" },
-    // Tiret insécable (U+2011) : évite la coupure « Pré- / inscription » dans le menu.
-    { label: "Pré‑inscription", href: "/pre-inscription" },
-    { label: "Trouver ma voie", href: questionnaireUrl },
+    { label: "Comment s'inscrire", href: "/inscription" },
+    { label: "Demande d'inscription", href: "/pre-inscription" },
     { label: "Recrutement", href: "/recrutement" },
     { label: "Contact", href: "/contact" }
   ]
 };
 
-export const heroHighlights = [
-  "Questionnaire d'orientation en 2 minutes",
-  "Dispositif gratuit sous conditions sociales et pédagogiques",
-  "Accompagnement payant ouvert à tous avec Cours Médical",
-  "Rappel par l'équipe AGMS",
-  "PASS/LAS en Guadeloupe",
-  "Cofinancement Union européenne, Région Guadeloupe et FSE+"
-];
-
 export const whyProjectText =
-  "La Guadeloupe est confrontée à des situations de décrochage scolaire et de désengagement qui pèsent sur l'égalité des chances, l'orientation et l'insertion des jeunes. Le projet FSE+ de l'AGMS agit sur ces freins en reliant information, motivation, découverte des métiers de la santé et accompagnement pédagogique renforcé pour les étudiants engagés en PASS ou LAS.";
+  "La Guadeloupe est confrontée à des situations de décrochage scolaire et de désengagement qui pèsent sur l'égalité des chances, l'orientation et l'insertion des jeunes. Le projet FSE+ de l'AGMS agit sur ces freins en reliant information, motivation, découverte des métiers de la santé et accompagnement pédagogique renforcé pour les étudiants engagés dans une première année de santé (licence portail santé à partir de la rentrée 2027, PASS et LAS jusque-là).";
 
 export const projectSummary =
   "Le projet vise à prévenir le décrochage scolaire et universitaire, renforcer l'égalité des chances et aider les jeunes guadeloupéens à construire un parcours d'orientation cohérent dans les métiers de la santé.";
@@ -46,11 +45,11 @@ export const projectCards = [
   {
     icon: "School",
     title: "Orientation des lycéens",
-    text: "Interventions auprès des élèves de Première et Terminale, information sur PASS/LAS, Parcoursup et les métiers de la santé."
+    text: "Interventions auprès des élèves de Première et Terminale, information sur la licence portail santé (PASS et LAS jusqu'en 2026), Parcoursup et les métiers de la santé."
   },
   {
     icon: "GraduationCap",
-    title: "Accompagnement PASS/LAS",
+    title: "Accompagnement en première année de santé",
     text: "Cours de soutien ciblés, ED en petits groupes, colles, QCM, suivi individualisé et cadre de travail en présentiel."
   },
   {
@@ -81,9 +80,9 @@ export const impactStats = [
     detail: "gratuite sous conditions ou payante ouverte à tous"
   },
   {
-    value: "2 min",
-    label: "pour faire le point",
-    detail: "questionnaire d'orientation unique"
+    value: "5 min",
+    label: "pour votre demande",
+    detail: "dossier en ligne, gratuit, sans pièce justificative"
   },
   {
     value: "20",
@@ -91,20 +90,20 @@ export const impactStats = [
     detail: "dans le dispositif gratuit sous conditions"
   },
   {
-    value: "PASS/LAS",
-    label: "Guadeloupe",
-    detail: "orientation vers la voie adaptée"
+    value: "2027",
+    label: "licence portail santé",
+    detail: "elle remplace le PASS et la LAS à la rentrée"
   }
 ];
 
 export const orientationSteps = [
   {
-    title: "Vous remplissez le questionnaire",
-    text: "Deux minutes suffisent pour nous donner les premiers éléments utiles à l'orientation."
+    title: "Vous déposez votre demande d'inscription",
+    text: "Un dossier en ligne d'environ 5 minutes, gratuit, sans pièce justificative à ce stade."
   },
   {
-    title: "On vous rappelle",
-    text: "L'équipe AGMS échange avec vous pour comprendre votre situation et répondre précisément."
+    title: "L'équipe étudie votre éligibilité",
+    text: "L'équipe AGMS examine votre situation (bourse, mention au bac, parcours) et vous recontacte pour échanger."
   },
   {
     title: "On confirme la voie adaptée",
@@ -113,17 +112,17 @@ export const orientationSteps = [
 ];
 
 export const freePathText =
-  "Le dispositif gratuit sous conditions est réservé aux étudiants éligibles sur critères sociaux et pédagogiques, notamment la situation de bourse, le dossier scolaire, les résultats au bac, l'entretien et l'admission ou l'inscription en PASS/LAS, dans la limite des 20 places disponibles.";
+  "Le dispositif gratuit sous conditions est réservé aux étudiants éligibles sur critères sociaux et pédagogiques, notamment la situation de bourse, le dossier scolaire, les résultats au bac, l'entretien et l'admission en licence portail santé, dans la limite des 20 places disponibles.";
 
 export const openPathText =
-  "Vous n'êtes pas éligible au dispositif gratuit sous conditions ? Un accompagnement payant ouvert à tous existe avec Cours Médical, hors dispositif gratuit et selon ses propres modalités. Le questionnaire permet de vous orienter vers la réponse la plus adaptée.";
+  "Vous n'êtes pas boursier·ère, ou pas éligible au dispositif gratuit sous conditions ? Un accompagnement payant ouvert à tous existe avec Cours Médical, hors dispositif gratuit et selon ses propres modalités. Votre demande d'inscription permet de vous orienter vers la réponse la plus adaptée.";
 
 export const accessModes = [
   {
     icon: "ShieldCheck",
     title: "Dispositif gratuit sous conditions",
     text:
-      "Voie réservée aux étudiants éligibles sur critères sociaux et pédagogiques : bourse ou situation sociale, dossier, résultats au bac, entretien, admission ou inscription PASS/LAS, dans la limite des 20 places disponibles."
+      "Voie réservée aux étudiants éligibles sur critères sociaux et pédagogiques : bourse ou situation sociale, dossier, résultats au bac, entretien, admission en licence portail santé, dans la limite des 20 places disponibles."
   },
   {
     icon: "GraduationCap",
@@ -162,12 +161,12 @@ export const methodPillars = [
   {
     icon: "School",
     title: "Tuteurs qualifiés",
-    text: "Encadrement par des étudiants tuteurs ayant réussi PASS/LAS, avec une transmission concrète des méthodes."
+    text: "Encadrement par des étudiants tuteurs ayant réussi leur première année de santé, avec une transmission concrète des méthodes."
   }
 ];
 
 export const projectObjectives = [
-  "Accompagner les étudiants en première année de médecine afin de maximiser les chances de réussite au concours",
+  "Accompagner les étudiants en première année de santé afin de maximiser leurs chances de réussite et de classement",
   "Informer et sensibiliser les lycéens aux métiers de la santé et aux parcours de formation",
   "Aider les jeunes à se projeter dans un projet d'orientation réaliste et motivant",
   "Renforcer les compétences académiques nécessaires aux filières scientifiques et de santé",
@@ -178,13 +177,13 @@ export const projectObjectives = [
 export const candidateSteps = [
   {
     step: "01",
-    title: "Je remplis le questionnaire",
-    text: "L'étudiant ou sa famille transmet les premiers éléments utiles pour comprendre la situation."
+    title: "Je dépose ma demande d'inscription",
+    text: "L'étudiant ou sa famille remplit le dossier en ligne, gratuit et sans pièce justificative à ce stade."
   },
   {
     step: "02",
     title: "L'équipe vérifie l'éligibilité",
-    text: "Le dossier est étudié selon la situation sociale, la bourse, les résultats au bac, le parcours, la motivation et l'admission PASS/LAS."
+    text: "Le dossier est étudié selon la situation sociale, la bourse, les résultats au bac, le parcours, la motivation et l'admission en licence portail santé."
   },
   {
     step: "03",
@@ -222,7 +221,7 @@ export const projectFrame = [
     title: "Le rôle de l'AGMS",
     label: "Portage local",
     text:
-      "L'AGMS porte le projet sur le territoire, accueille le dispositif dans ses locaux de Jarry et coordonne l'accompagnement PASS/LAS avec ses équipes et ses intervenants.",
+      "L'AGMS porte le projet sur le territoire, accueille le dispositif dans ses locaux de Jarry et coordonne l'accompagnement des étudiants en première année de santé avec ses équipes et ses intervenants.",
     note: "Un ancrage local pour accompagner les jeunes guadeloupéens vers les études de santé."
   }
 ];
@@ -234,10 +233,10 @@ export const localDetails = [
 ];
 
 export const accompanimentText =
-  "L'accompagnement PASS/LAS reprend une organisation pédagogique complète : préparation annuelle, cours de soutien ciblés, enseignements dirigés en petits groupes, colles hebdomadaires corrigées, QCM réguliers, suivi personnalisé et méthodologie rigoureuse. Dans le cadre FSE+, la voie gratuite sous conditions est réservée aux étudiants éligibles sélectionnés selon des critères sociaux et pédagogiques. Si l'étudiant n'est pas éligible, une voie payante ouverte à tous peut être proposée avec Cours Médical, hors dispositif gratuit.";
+  "L'accompagnement en première année de santé reprend une organisation pédagogique complète : préparation annuelle, cours de soutien ciblés, enseignements dirigés en petits groupes, colles hebdomadaires corrigées, QCM réguliers, suivi personnalisé et méthodologie rigoureuse. Il s'adapte à la licence portail santé dès la rentrée 2027, et continue d'accompagner les étudiants actuels en PASS et en LAS. Dans le cadre FSE+, la voie gratuite sous conditions est réservée aux étudiants éligibles sélectionnés selon des critères sociaux et pédagogiques. Si l'étudiant n'est pas éligible, une voie payante ouverte à tous peut être proposée avec Cours Médical, hors dispositif gratuit.";
 
 export const accompanimentFeatures = [
-  "Préparation annuelle PASS/LAS",
+  "Préparation annuelle en première année de santé",
   "Cours de soutien ciblés",
   "Enseignements dirigés en présentiel",
   "TD / ED en petits groupes",
@@ -290,37 +289,93 @@ export const stageTestimonials = [
 ];
 
 export const stageRentreeCta =
-  "Les inscriptions à l'accompagnement gratuit sous conditions se poursuivent. Le questionnaire prend deux minutes : l'équipe AGMS vous rappelle ensuite pour vérifier votre éligibilité et confirmer la voie adaptée, dans la limite des 20 places disponibles.";
+  "Les demandes d'inscription à l'accompagnement gratuit sous conditions sont ouvertes pour la rentrée 2027-2028. Le dossier se remplit en ligne, sans pièce justificative : l'équipe AGMS vous rappelle ensuite pour étudier votre éligibilité et confirmer la voie adaptée, dans la limite des 20 places disponibles.";
 
-/** Pré-inscriptions : la date d'ouverture est contrôlée côté serveur (lib/preinscription-server.ts). */
+/** Avertissement affiché en tête des contenus datés d'avant la réforme (le texte d'origine n'est pas modifié). */
+export const preReformNotice =
+  "Publié avant la réforme : à la rentrée 2027, la licence portail santé remplace le PASS et la LAS.";
+
+/**
+ * Demande d'inscription (dossier de candidature en ligne, gratuit, sans pièce justificative).
+ * La date d'ouverture est contrôlée côté serveur (lib/preinscription-server.ts).
+ */
 export const preinscription = {
   season: "rentrée 2027-2028",
   openingLabel: "jeudi 1er octobre 2026",
   steps: [
-    "Vous remplissez le formulaire en 2 minutes.",
-    "L'équipe AGMS vous recontacte pour faire le point sur votre projet et répondre à vos questions.",
-    "Nous vous orientons vers la voie adaptée : dispositif gratuit sous conditions ou accompagnement payant ouvert à tous."
+    "Vous remplissez votre demande d'inscription en ligne, gratuitement et sans pièce justificative.",
+    "L'équipe AGMS étudie votre éligibilité et vous recontacte.",
+    "Nous confirmons la voie adaptée : dispositif gratuit sous conditions ou accompagnement payant ouvert à tous avec Cours Médical."
   ],
   notice:
-    "La pré-inscription ne vaut pas inscription définitive. L'accès au dispositif gratuit reste soumis à l'éligibilité et à la sélection, dans la limite des places disponibles.",
+    "La demande d'inscription ne vaut pas inscription définitive. L'accès au dispositif gratuit reste soumis à l'éligibilité et à la sélection, dans la limite des 20 places disponibles. L'inscription devient définitive après votre admission en licence portail santé.",
   situations: [
     "Lycéen·ne en Terminale",
     "Étudiant·e en PASS ou LAS",
     "En réorientation",
     "Autre situation"
-  ]
+  ],
+  scholarship: ["Oui", "Demande en cours", "Non"],
+  scholarshipLevels: ["0 bis", "1", "2", "3", "4", "5", "6", "7", "Je ne sais pas"],
+  bacMentionStatus: ["Obtenue", "Visée cette année", "Pas de mention"],
+  bacMentions: ["Assez bien", "Bien", "Très bien"],
+  imageRights: ["J'autorise", "Je refuse"]
+};
+
+/** Suivi de l'éligibilité dans l'espace admin (sans valeur : « à étudier »). */
+export const eligibilityStatuses = [
+  { value: "a-etudier", label: "À étudier" },
+  { value: "eligible", label: "Éligible" },
+  { value: "non-eligible", label: "Non éligible" }
+] as const;
+
+export type EligibilityStatus = (typeof eligibilityStatuses)[number]["value"];
+
+/** Ce que la licence portail santé change pour l'accompagnement (repris de l'encadré de l'article). */
+export const reformAdaptations = [
+  {
+    title: "Choisir sa discipline",
+    text: "Elle compte autant que la santé pour être classé : nous vous aidons à choisir celle dans laquelle vous pouvez réussir."
+  },
+  {
+    title: "Organiser deux programmes",
+    text: "Bloc santé et bloc disciplinaire se valident séparément : nous vous aidons à répartir votre travail entre les deux."
+  },
+  {
+    title: "S'entraîner en conditions réelles",
+    text: "Le classement se joue sur la première session : colles, QCM et annales chaque semaine pour arriver prêt."
+  }
+];
+
+/** Intervention du major 2024-2025 auprès des étudiants (22 octobre 2026). */
+export const majorMeetup = {
+  image: "/images/vie-de-l-accompagnement/intervention-major-2024-2025.webp",
+  caption: "Intervention du major 2024-2025 auprès de nos étudiants",
+  title: "Le major 2024-2025 à la rencontre de nos étudiants",
+  intro:
+    "Le 22 octobre 2026, le major de la promotion 2024-2025 est venu partager son expérience avec nos étudiants.",
+  programme: [
+    "La présentation de sa méthode de travail",
+    "Comment il a appréhendé son année",
+    "Un temps de questions-réponses avec les étudiants"
+  ],
+  testimonial: {
+    quote:
+      "L'échange avec le major m'a permis de reprendre confiance en moi et de comprendre que cette année n'est facile pour personne. Je sais maintenant que j'ai bien ma place en médecine, et je compte continuer à travailler pour la deuxième année.",
+    author: "Étudiante de la prépa, promotion 2026-2027"
+  }
 };
 
 export const eligibilityText =
-  "Pour connaître votre éligibilité, remplissez le questionnaire d'orientation. À partir de ces éléments, l'équipe AGMS vous rappelle pour échanger, vérifier votre situation et confirmer si vous relevez du dispositif gratuit sous conditions ou d'un accompagnement payant ouvert à tous.";
+  "Pour connaître votre éligibilité, déposez votre demande d'inscription. À partir de ces éléments, l'équipe AGMS vous rappelle pour échanger, vérifier votre situation et confirmer si vous relevez du dispositif gratuit sous conditions ou d'un accompagnement payant ouvert à tous.";
 
 export const eligibilityCriteria = [
   "Dispositif gratuit sous conditions réservé aux étudiants éligibles",
   "Critères sociaux, notamment bourse ou situation sociale éligible",
   "Étude du dossier scolaire et des résultats au bac",
   "Places limitées, avec sélection sur dossier et entretien",
-  "Admission ou inscription PASS/LAS nécessaire pour intégrer l'accompagnement gratuit sous conditions",
-  "Aucun échelon de bourse n'est demandé dans le questionnaire en ligne",
+  "Admission en licence portail santé nécessaire pour intégrer l'accompagnement gratuit sous conditions",
+  "Échelon de bourse et mention au bac demandés dans le dossier, sans pièce justificative à ce stade",
   "Une voie payante ouverte à tous peut être proposée avec Cours Médical si le dispositif gratuit sous conditions ne correspond pas à votre situation"
 ];
 
@@ -330,7 +385,7 @@ export const annualTimeline = [
     title: "Informer les lycéens",
     items: [
       "Interventions dans les lycées",
-      "Information sur PASS/LAS et Parcoursup",
+      "Information sur la licence portail santé et Parcoursup",
       "Découverte des métiers de la santé",
       "Échanges avec étudiants tuteurs et professionnels"
     ]
@@ -342,7 +397,7 @@ export const annualTimeline = [
       "Méthodologie",
       "Organisation",
       "Introduction aux matières",
-      "Compréhension du fonctionnement PASS/LAS"
+      "Compréhension du fonctionnement de la première année de santé"
     ]
   },
   {
@@ -396,13 +451,13 @@ export const annualTimeline = [
 export const supportCards = [
   {
     icon: "GraduationCap",
-    title: "Préparation annuelle PASS/LAS",
+    title: "Préparation annuelle en première année de santé",
     text: "Accompagnement continu combinant ED en petits groupes, colles corrigées, suivi individualisé et méthode de travail."
   },
   {
     icon: "CalendarDays",
     title: "Mise en route méthodologique",
-    text: "Repères sur le fonctionnement PASS/LAS, organisation, matières clés et confiance dans la méthode de travail."
+    text: "Repères sur le fonctionnement de la première année de santé (licence portail santé, PASS, LAS), organisation, matières clés et confiance dans la méthode de travail."
   },
   {
     icon: "BookOpen",
@@ -416,7 +471,7 @@ export const supportCards = [
   },
   {
     icon: "Lightbulb",
-    title: "Méthodologie PASS/LAS",
+    title: "Méthodologie de la première année de santé",
     text: "Organisation, planification, mémorisation active, priorisation, gestion du temps et stratégie de réponse."
   },
   {
@@ -427,7 +482,7 @@ export const supportCards = [
   {
     icon: "Users",
     title: "Tuteurs qualifiés",
-    text: "Accompagnement par des tuteurs ayant réussi PASS/LAS, capables de transmettre méthode, expérience et repères concrets."
+    text: "Accompagnement par des tuteurs ayant réussi leur première année de santé, capables de transmettre méthode, expérience et repères concrets."
   },
   {
     icon: "School",
@@ -463,7 +518,7 @@ export const salonEventDetails = [
   {
     label: "Publics",
     value: "Jeunes, familles et acteurs éducatifs",
-    text: "Lycéens de Première et Terminale, étudiants PASS/LAS, parents, équipes éducatives et partenaires santé."
+    text: "Lycéens de Première et Terminale, étudiants en première année de santé, parents, équipes éducatives et partenaires santé."
   }
 ];
 
@@ -486,7 +541,7 @@ export const salonProfessionalExamples = [
   {
     icon: "GraduationCap",
     title: "Étudiants et tuteurs",
-    text: "Retours d'expérience sur PASS/LAS, Parcoursup, l'organisation du travail et la vie étudiante."
+    text: "Retours d'expérience sur la première année de santé, Parcoursup, l'organisation du travail et la vie étudiante."
   },
   {
     icon: "School",
@@ -505,12 +560,12 @@ export const salonProgram = [
   "Rencontres avec des professionnels et des étudiants",
   "Mini-conférences et témoignages de parcours",
   "Ateliers pratiques et démonstrations de gestes ou matériels",
-  "Temps d'échange autour de PASS/LAS et de Parcoursup",
+  "Temps d'échange autour de la licence portail santé et de Parcoursup",
   "Orientation individualisée pour aider chaque jeune à clarifier son projet"
 ];
 
 export const applicationText =
-  "Le questionnaire ne vaut pas admission définitive. Il sert à comprendre votre situation et à organiser un échange pour confirmer la voie adaptée : dispositif gratuit sous conditions si vous êtes éligible, ou accompagnement payant ouvert à tous avec Cours Médical, hors dispositif gratuit.";
+  "La demande d'inscription ne vaut pas admission définitive. Elle sert à étudier votre éligibilité et à organiser un échange pour confirmer la voie adaptée : dispositif gratuit sous conditions si vous êtes éligible, ou accompagnement payant ouvert à tous avec Cours Médical, hors dispositif gratuit.";
 
 export const faqItems = [
   {
@@ -521,12 +576,12 @@ export const faqItems = [
   {
     question: "Comment savoir si je suis éligible ?",
     answer:
-      "Le plus simple est de remplir le questionnaire d'orientation. L'équipe AGMS vous rappelle ensuite pour échanger et vérifier votre situation sans vous demander l'échelon de bourse en ligne."
+      "Le plus simple est de déposer votre demande d'inscription en ligne. Vous y indiquez votre situation de bourse (et votre échelon), votre mention au bac et votre parcours ; l'équipe AGMS vous rappelle ensuite pour échanger et confirmer votre éligibilité."
   },
   {
     question: "Que se passe-t-il si je ne suis pas éligible au gratuit ?",
     answer:
-      "Une voie payante ouverte à tous peut être proposée avec Cours Médical, hors dispositif gratuit FSE+. Le questionnaire sert justement à orienter chaque famille vers la réponse adaptée."
+      "Une voie payante ouverte à tous peut être proposée avec Cours Médical, hors dispositif gratuit FSE+. La demande d'inscription sert justement à orienter chaque famille vers la réponse adaptée."
   },
   {
     question: "Où ont lieu les cours ?",
@@ -545,11 +600,11 @@ export const faqItems = [
   {
     question: "Est-ce réservé aux étudiants en médecine ?",
     answer:
-      "Le dispositif concerne les parcours PASS/LAS, qui permettent d'accéder aux filières de santé : médecine, maïeutique, odontologie, pharmacie et kinésithérapie selon les parcours."
+      "Le dispositif accompagne la première année de santé, qui mène aux filières de médecine, maïeutique, odontologie et pharmacie : la licence portail santé à partir de la rentrée 2027, le PASS et la LAS pour les étudiants déjà engagés dans ces parcours."
   },
   {
-    question: "Comment être orienté ?",
+    question: "Comment faire ma demande ?",
     answer:
-      "Il suffit de remplir le questionnaire unique. L'équipe AGMS recontacte ensuite l'étudiant ou sa famille pour confirmer la voie adaptée."
+      "Il suffit de remplir la demande d'inscription en ligne. L'équipe AGMS recontacte ensuite l'étudiant ou sa famille pour confirmer la voie adaptée."
   }
 ];

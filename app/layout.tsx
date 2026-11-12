@@ -6,11 +6,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "AGMS — Dispositif FSE+ PASS/LAS",
+    default: "AGMS — Accompagnement gratuit études de santé : licence portail santé, PASS, LAS",
     template: "%s | AGMS — Dispositif FSE+ PASS/LAS"
   },
   description:
-    "Site institutionnel AGMS pour orienter les étudiants PASS/LAS en Guadeloupe vers le dispositif gratuit sous conditions ou vers un accompagnement payant ouvert à tous.",
+    "Dispositif AGMS en Guadeloupe : accompagnement gratuit sous conditions vers les études de santé (licence portail santé, PASS, LAS) ou accompagnement payant ouvert à tous. Pré-inscriptions ouvertes pour la rentrée 2027.",
   metadataBase: new URL("https://www.dispositif-agms.fr"),
   verification: {
     other: {
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "AGMS — Dispositif FSE+ PASS/LAS",
+    title: "AGMS — Accompagnement gratuit études de santé : licence portail santé, PASS, LAS",
     description:
-      "Un questionnaire d'orientation pour confirmer la voie adaptée : dispositif gratuit sous conditions ou accompagnement payant ouvert à tous.",
+      "Une demande d'inscription en ligne pour confirmer la voie adaptée : dispositif gratuit sous conditions ou accompagnement payant ouvert à tous.",
     type: "website",
     locale: "fr_FR"
   }

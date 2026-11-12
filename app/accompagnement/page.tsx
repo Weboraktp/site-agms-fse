@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { FeatureCard } from "@/components/FeatureCard";
+import { MajorMeetup } from "@/components/MajorMeetup";
 import { PageHeader } from "@/components/PageHeader";
+import { PlatformShowcase } from "@/components/PlatformShowcase";
+import { ReformSection } from "@/components/ReformSection";
 import { SectionTitle } from "@/components/SectionTitle";
 import {
   accessModes,
@@ -17,7 +20,7 @@ export default function AccompagnementPage() {
     <>
       <PageHeader
         eyebrow="Accompagnement"
-        title="Accompagnement PASS/LAS — dispositif AGMS"
+        title="Accompagnement en première année de santé : licence portail santé, PASS, LAS"
         intro="Un dispositif local, humain et structuré qui combine préparation annuelle, soutien ciblé, colles, QCM, suivi personnalisé et méthode."
       />
 
@@ -52,12 +55,14 @@ export default function AccompagnementPage() {
         </div>
       </section>
 
+      <ReformSection />
+
       <section className="section section--white">
         <div className="container">
           <SectionTitle
             eyebrow="Deux voies d'accès"
             title="Gratuit sous conditions ou payant ouvert à tous"
-            intro="Le questionnaire permet de vérifier si l'étudiant relève du dispositif gratuit sous conditions. Si ce n'est pas le cas, une solution payante peut être proposée avec Cours Médical, hors financement FSE+."
+            intro="La demande d'inscription permet de vérifier si l'étudiant relève du dispositif gratuit sous conditions. Si ce n'est pas le cas, une solution payante peut être proposée avec Cours Médical, hors financement FSE+."
             align="center"
           />
           <div className="card-grid card-grid--two">
@@ -67,6 +72,8 @@ export default function AccompagnementPage() {
           </div>
         </div>
       </section>
+
+      <PlatformShowcase />
 
       <section className="section">
         <div className="container">
@@ -84,14 +91,16 @@ export default function AccompagnementPage() {
         </div>
       </section>
 
+      <MajorMeetup />
+
       <section className="section section--cta">
         <div className="container cta-band">
           <div>
-            <p className="eyebrow">PASS/LAS</p>
+            <p className="eyebrow">Première année de santé</p>
             <h2>L'accompagnement vise autant la méthode que la compréhension des matières.</h2>
           </div>
-          <Link className="button button--primary" href={site.questionnaireUrl}>
-            Trouver ma voie
+          <Link className="button button--primary" href={site.candidatureUrl}>
+            Demande d'inscription
             <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>

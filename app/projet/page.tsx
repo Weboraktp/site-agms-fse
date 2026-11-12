@@ -125,8 +125,8 @@ export default function ProjetPage() {
             <p className="eyebrow">Places limitées</p>
             <h2>20 étudiants peuvent être accompagnés dans le cadre du dispositif gratuit sous conditions.</h2>
           </div>
-          <Link className="button button--primary" href={site.questionnaireUrl}>
-            Trouver ma voie
+          <Link className="button button--primary" href={site.candidatureUrl}>
+            Demande d'inscription
             <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>

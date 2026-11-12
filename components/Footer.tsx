@@ -43,8 +43,9 @@ export function Footer() {
         <div className="footer-links">
           <Link href="/mentions-legales">Mentions légales</Link>
           <Link href="/confidentialite">Politique de confidentialité</Link>
-          <Link href={site.questionnaireUrl}>Trouver ma voie</Link>
-          <Link href={site.preinscriptionUrl}>Pré-inscription</Link>
+          <Link href={site.inscriptionUrl}>Comment s'inscrire</Link>
+          <Link href={site.candidatureUrl}>Demande d'inscription</Link>
+          <Link href="/blog">Actualités</Link>
         </div>
       </div>
     </footer>

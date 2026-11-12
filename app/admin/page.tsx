@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Download, LogOut } from "lucide-react";
 import { AdminDeleteButton } from "@/components/AdminDeleteButton";
+import { AdminEligibility } from "@/components/AdminEligibility";
 import { AdminLoginForm } from "@/components/AdminLoginForm";
 import { PageHeader } from "@/components/PageHeader";
 import { isAdmin } from "@/lib/admin-auth";
@@ -22,6 +23,55 @@ const dateFormat = new Intl.DateTimeFormat("fr-FR", {
   timeStyle: "short",
   timeZone: "America/Guadeloupe"
 });
+
+function birthDateLabel(value?: string) {
+  if (!value) return null;
+  const [year, month, day] = value.split("-");
+  return `${day}/${month}/${year}`;
+}
+
+/** Les détails du dossier (absents des pré-inscriptions d'avant le 12 novembre 2026). */
+function details(record: StoredPreinscription) {
+  return [
+    ["Né·e le", birthDateLabel(record.birthDate)],
+    [
+      "Adresse",
+      [record.address, [record.postalCode, record.city].filter(Boolean).join(" ")]
+        .filter(Boolean)
+        .join(", ")
+    ],
+    ["Établissement", record.school],
+    ["Discipline envisagée", record.discipline],
+    [
+      "Boursier·ère",
+      record.scholarship
+        ? record.scholarshipLevel
+          ? `${record.scholarship} · échelon ${record.scholarshipLevel}`
+          : record.scholarship
+        : undefined
+    ],
+    [
+      "Mention au bac",
+      record.bacMentionStatus
+        ? record.bacMention
+          ? `${record.bacMentionStatus} · ${record.bacMention}`
+          : record.bacMentionStatus
+        : undefined
+    ],
+    [
+      "Parent ou contact d'urgence",
+      record.emergencyName
+        ? `${record.emergencyName} (${record.emergencyRelation}) · ${record.emergencyPhone}`
+        : undefined
+    ],
+    ["Droit à l'image", record.imageRights],
+    [
+      "Groupe WhatsApp",
+      record.whatsappGroup === undefined ? undefined : record.whatsappGroup ? "Oui" : "Non"
+    ],
+    ["Message", record.message]
+  ].filter((entry): entry is [string, string] => Boolean(entry[1]));
+}
 
 export default async function AdminPage() {
   if (!(await isAdmin())) {
@@ -50,12 +100,16 @@ export default async function AdminPage() {
     loadError = true;
   }
 
+  const toStudy = records.filter((record) => !record.eligibility || record.eligibility === "a-etudier").length;
+  const eligible = records.filter((record) => record.eligibility === "eligible").length;
+  const notEligible = records.filter((record) => record.eligibility === "non-eligible").length;
+
   return (
     <>
       <PageHeader
         eyebrow="Espace admin"
-        title={`Pré-inscriptions ${preinscription.season}`}
-        intro={`${records.length} pré-inscription${records.length > 1 ? "s" : ""} reçue${records.length > 1 ? "s" : ""}, de la plus récente à la plus ancienne.`}
+        title={`Demandes d'inscription ${preinscription.season}`}
+        intro={`${records.length} demande${records.length > 1 ? "s" : ""} reçue${records.length > 1 ? "s" : ""}, de la plus récente à la plus ancienne. À étudier : ${toStudy} · éligibles : ${eligible} · non éligibles : ${notEligible}.`}
       />
 
       <section className="section section--white">
@@ -93,11 +147,10 @@ export default async function AdminPage() {
                 <thead>
                   <tr>
                     <th scope="col">Reçue le</th>
-                    <th scope="col">Nom</th>
+                    <th scope="col">Étudiant·e</th>
                     <th scope="col">Contact</th>
-                    <th scope="col">Situation</th>
-                    <th scope="col">Établissement</th>
-                    <th scope="col">Message</th>
+                    <th scope="col">Éligibilité</th>
+                    <th scope="col">Dossier</th>
                     <th scope="col">
                       <span className="visually-hidden">Supprimer</span>
                     </th>
@@ -106,19 +159,38 @@ export default async function AdminPage() {
                 <tbody>
                   {records.map((record) => {
                     const name = `${record.firstName} ${record.lastName}`;
+                    const detail = details(record);
                     return (
                       <tr key={record.pathname}>
                         <td>{dateFormat.format(new Date(record.createdAt))}</td>
                         <td>
                           <strong>{name}</strong>
+                          <span className="admin-table__sub">{record.situation}</span>
                         </td>
                         <td>
                           <a href={`tel:${record.phone.replace(/[^\d+]/g, "")}`}>{record.phone}</a>
                           <a href={`mailto:${record.email}`}>{record.email}</a>
                         </td>
-                        <td>{record.situation}</td>
-                        <td>{record.school || "—"}</td>
-                        <td className="admin-table__message">{record.message || "—"}</td>
+                        <td>
+                          <AdminEligibility pathname={record.pathname} current={record.eligibility} />
+                        </td>
+                        <td className="admin-table__message">
+                          {detail.length > 0 ? (
+                            <details className="admin-details">
+                              <summary>Voir le dossier</summary>
+                              <dl>
+                                {detail.map(([label, value]) => (
+                                  <div key={label}>
+                                    <dt>{label}</dt>
+                                    <dd>{value}</dd>
+                                  </div>
+                                ))}
+                              </dl>
+                            </details>
+                          ) : (
+                            "—"
+                          )}
+                        </td>
                         <td>
                           <AdminDeleteButton pathname={record.pathname} name={name} />
                         </td>

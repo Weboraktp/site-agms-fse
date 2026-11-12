@@ -8,8 +8,7 @@ import {
   salonItems,
   salonProfessionalExamples,
   salonProgram,
-  salonText,
-  site
+  salonText
 } from "@/lib/content";
 
 export default function SalonPage() {
@@ -28,7 +27,7 @@ export default function SalonPage() {
             <div className="prose">
               <p>{salonText}</p>
             </div>
-            <Link className="button button--secondary button--on-light" href={site.questionnaireUrl}>
+            <Link className="button button--secondary button--on-light" href="/contact">
               <Mail size={18} aria-hidden="true" />
               Être informé du prochain salon
             </Link>
@@ -95,7 +94,7 @@ export default function SalonPage() {
           <SectionTitle
             eyebrow="Objectifs du salon"
             title="Un outil d'orientation et de prévention du décrochage"
-            intro="Le salon complète les interventions en lycée et l'accompagnement PASS/LAS en donnant aux jeunes des repères visibles, accessibles et motivants."
+            intro="Le salon complète les interventions en lycée et l'accompagnement en première année de santé en donnant aux jeunes des repères visibles, accessibles et motivants."
             align="center"
           />
           <div className="stats-grid">
@@ -114,7 +113,7 @@ export default function SalonPage() {
             <p className="eyebrow">Acteurs éducatifs et santé</p>
             <h2>Le salon peut associer lycéens, étudiants, professionnels, centres de formation et structures d'orientation.</h2>
           </div>
-          <Link className="button button--primary" href={site.questionnaireUrl}>
+          <Link className="button button--primary" href="/contact">
             Proposer un échange
             <ArrowRight size={18} aria-hidden="true" />
           </Link>

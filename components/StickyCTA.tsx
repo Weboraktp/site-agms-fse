@@ -7,11 +7,11 @@ import { site } from "@/lib/content";
 
 export function StickyCTA() {
   const pathname = usePathname();
-  if (pathname === site.preinscriptionUrl || pathname.startsWith("/admin")) return null;
+  if (pathname === site.candidatureUrl || pathname.startsWith("/admin")) return null;
 
   return (
-    <Link className="sticky-cta" href={site.questionnaireUrl} aria-label="Trouver la voie adaptée">
-      <span>Trouver ma voie</span>
+    <Link className="sticky-cta" href={site.candidatureUrl} aria-label="Faire ma demande d'inscription">
+      <span>Demande d'inscription</span>
       <ArrowRight size={17} aria-hidden="true" />
     </Link>
   );

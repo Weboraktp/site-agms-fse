@@ -2,6 +2,10 @@ import Link from "next/link";
 import { ArrowRight, Quote } from "lucide-react";
 import { FeatureCard } from "@/components/FeatureCard";
 import { Hero } from "@/components/Hero";
+import { MajorMeetup } from "@/components/MajorMeetup";
+import { NewsSection } from "@/components/NewsSection";
+import { PlatformShowcase } from "@/components/PlatformShowcase";
+import { ReformSection } from "@/components/ReformSection";
 import { SectionTitle } from "@/components/SectionTitle";
 import {
   accessModes,
@@ -15,9 +19,11 @@ import {
   accompanimentText,
   openPathText,
   orientationSteps,
+  preReformNotice,
   projectCards,
   projectFrame,
   projectSummary,
+  reformArticleUrl,
   salonText,
   site,
   stageRentreeCta,
@@ -51,8 +57,8 @@ export default function HomePage() {
         <div className="container">
           <SectionTitle
             eyebrow="Comment ça marche"
-            title="Un questionnaire unique pour vous orienter"
-            intro="Le questionnaire sert à comprendre votre situation. Il ne remplace pas l'échange avec l'équipe AGMS : c'est justement cet échange qui permet de confirmer l'éligibilité et la voie adaptée."
+            title="Une demande d'inscription en ligne, gratuite et sans pièce justificative"
+            intro="La demande d'inscription sert à étudier votre situation. Elle ne remplace pas l'échange avec l'équipe AGMS : c'est justement cet échange qui permet de confirmer l'éligibilité et la voie adaptée."
             align="center"
           />
           <div className="candidate-flow">
@@ -65,16 +71,27 @@ export default function HomePage() {
             ))}
           </div>
           <div className="section-actions section-actions--center">
-            <Link className="button button--primary" href={site.questionnaireUrl}>
-              Trouver ma voie
+            <Link className="button button--primary" href={site.candidatureUrl}>
+              Demande d'inscription
               <ArrowRight size={18} aria-hidden="true" />
+            </Link>
+            <Link className="inline-link" href={site.inscriptionUrl}>
+              Comment s'inscrire
+              <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="section section--accent" id="stage-rentree">
+      <NewsSection white={false} />
+
+      <ReformSection />
+
+      <section className="section section--white" id="stage-rentree">
         <div className="container">
+          <p className="important-box article-outdated">
+            {preReformNotice} <Link href={reformArticleUrl}>Ce qui change</Link>
+          </p>
           <SectionTitle
             eyebrow="Actualité"
             title="Retour sur le stage de rentrée"
@@ -124,7 +141,7 @@ export default function HomePage() {
               <p>{stageRentreeCta}</p>
             </div>
             <div className="stage-cta__actions">
-              <Link className="button button--primary" href={site.questionnaireUrl}>
+              <Link className="button button--primary" href={site.candidatureUrl}>
                 Candidater au dispositif gratuit
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
@@ -197,7 +214,10 @@ export default function HomePage() {
       <section className="section">
         <div className="container two-column">
           <div>
-            <SectionTitle eyebrow="Accompagnement" title="Un dispositif AGMS PASS/LAS local et humain" />
+            <SectionTitle
+              eyebrow="Accompagnement"
+              title="Un accompagnement local et humain en première année de santé"
+            />
             <div className="prose">
               <p>{accompanimentText}</p>
             </div>
@@ -216,6 +236,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <PlatformShowcase />
+
       <section className="section section--white">
         <div className="container">
           <SectionTitle
@@ -232,6 +254,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <MajorMeetup white={false} />
+
       <section className="section section--accent">
         <div className="container two-column">
           <div>
@@ -244,7 +268,7 @@ export default function HomePage() {
               <p>{freePathText}</p>
               <p className="important-box">
                 L'éligibilité tient compte notamment des critères sociaux, de la bourse, du dossier,
-                des résultats au bac, de l'entretien et de l'admission PASS/LAS.
+                des résultats au bac, de l'entretien et de l'admission en licence portail santé.
               </p>
             </div>
           </div>
@@ -253,8 +277,8 @@ export default function HomePage() {
             <p>{applicationText}</p>
             <p>{openPathText}</p>
             <div className="section-actions">
-              <Link className="button button--primary" href={site.questionnaireUrl}>
-                Trouver ma voie
+              <Link className="button button--primary" href={site.candidatureUrl}>
+                Demande d'inscription
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
             </div>
@@ -274,7 +298,7 @@ export default function HomePage() {
           <SectionTitle
             eyebrow="Aller plus loin"
             title="Chaque sujet a sa page dédiée"
-            intro="L'accueil oriente rapidement ; les pages internes détaillent l'organisation annuelle, le contenu de l'accompagnement, le salon santé et le questionnaire d'orientation."
+            intro="L'accueil oriente rapidement ; les pages internes détaillent l'organisation annuelle, le contenu de l'accompagnement, le salon santé et la demande d'inscription."
             align="center"
           />
           <div className="preview-grid">
@@ -309,12 +333,12 @@ export default function HomePage() {
       <section className="section section--cta">
         <div className="container cta-band">
           <div>
-            <p className="eyebrow">Orientation</p>
-            <h2>Pour connaître votre éligibilité, commencez par le questionnaire : l'équipe AGMS vous rappelle ensuite.</h2>
+            <p className="eyebrow">Pré-inscriptions ouvertes</p>
+            <h2>Pour connaître votre éligibilité, déposez votre demande d'inscription : l'équipe AGMS vous rappelle ensuite.</h2>
           </div>
           <div className="cta-band__actions">
-            <Link className="button button--primary" href={site.questionnaireUrl}>
-              Trouver ma voie
+            <Link className="button button--primary" href={site.candidatureUrl}>
+              Demande d'inscription
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>

@@ -9,9 +9,9 @@ import { preinscription, site } from "@/lib/content";
 import { isPreinscriptionOpen } from "@/lib/preinscription-server";
 
 export const metadata: Metadata = {
-  title: "Pré-inscription rentrée 2027-2028",
+  title: "Demande d'inscription rentrée 2027-2028",
   description:
-    "Pré-inscrivez-vous à l'accompagnement PASS/LAS de l'AGMS pour la rentrée 2027-2028 : l'équipe vous recontacte pour vous orienter vers la voie adaptée."
+    "Déposez votre demande d'inscription au dispositif gratuit sous conditions de l'AGMS pour la rentrée 2027-2028 : dossier en ligne gratuit, sans pièce justificative. L'équipe étudie votre éligibilité et vous recontacte."
 };
 
 export default async function PreinscriptionPage() {
@@ -22,11 +22,11 @@ export default async function PreinscriptionPage() {
   return (
     <>
       <PageHeader
-        eyebrow={`Pré-inscriptions ${preinscription.season}`}
-        title="Pré-inscription à l'accompagnement PASS/LAS"
+        eyebrow={`Dossier de candidature · ${preinscription.season}`}
+        title="Demande d'inscription au dispositif"
         intro={
           open
-            ? `Les pré-inscriptions pour la ${preinscription.season} sont ouvertes. Laissez-nous vos coordonnées, l'équipe AGMS vous recontacte rapidement.`
+            ? "Les pré-inscriptions sont ouvertes. Le dossier est gratuit et ne demande aucune pièce justificative : l'équipe AGMS étudie votre éligibilité et vous recontacte."
             : `Les pré-inscriptions pour la ${preinscription.season} ouvrent le ${preinscription.openingLabel}.`
         }
       />
@@ -41,6 +41,13 @@ export default async function PreinscriptionPage() {
               ))}
             </ol>
             <p className="important-box">{preinscription.notice}</p>
+            <p className="preinscription-more">
+              Pas sûr·e de votre situation ?{" "}
+              <Link className="inline-link" href={site.inscriptionUrl}>
+                Voir comment s&apos;inscrire
+                <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+            </p>
             <div className="contact-list preinscription-contact">
               {site.phones.map((phone) => (
                 <a href={`tel:${phone.replace(/\s/g, "")}`} key={phone}>

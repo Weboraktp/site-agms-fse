@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle, MapPin, ShieldCheck, Sparkles } from "lucide-react";
-import { heroHighlights, preinscription, site } from "@/lib/content";
+import { ArrowRight } from "lucide-react";
+import { preinscription, site } from "@/lib/content";
 
 export function Hero() {
   return (
@@ -8,47 +8,33 @@ export function Hero() {
       <div className="container hero__content">
         <div className="hero__grid">
           <div className="hero__copy">
-            <Link className="hero__announce" href={site.preinscriptionUrl}>
+            <Link className="hero__announce" href={site.inscriptionUrl}>
               <span className="hero__announce-dot" aria-hidden="true" />
               Pré-inscriptions {preinscription.season}
               <ArrowRight size={16} aria-hidden="true" />
             </Link>
             <p className="hero__kicker">AGMS — Projet FSE+ réussite éducative</p>
-            <h1>Réussir PASS/LAS en Guadeloupe — trouvez la voie adaptée à votre situation</h1>
+            <h1>Réussir sa première année de santé en Guadeloupe : licence portail santé, PASS, LAS</h1>
             <p className="hero__lead">
               AGMS propose deux voies d'accompagnement : un dispositif gratuit, cofinancé par
               l'Union européenne et la Région Guadeloupe, réservé aux étudiants éligibles sur critères
               sociaux et pédagogiques (bourse ou situation sociale, dossier, résultats au bac,
-              entretien et admission PASS/LAS) ; et un accompagnement payant ouvert à tous avec Cours
-              Médical. Faites le point en 2 minutes, on vous rappelle pour vous répondre précisément.
+              entretien et admission en licence portail santé) ; et un accompagnement payant ouvert à
+              tous avec Cours Médical. Déposez votre demande d'inscription en ligne : on vous
+              rappelle pour étudier votre éligibilité.
             </p>
 
             <div className="hero__actions" aria-label="Actions principales">
-              <Link className="button button--primary" href={site.questionnaireUrl}>
-                Trouver ma voie
+              <Link className="button button--primary" href={site.candidatureUrl}>
+                Demande d'inscription
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
-              <Link className="button button--secondary" href={site.questionnaireUrl}>
-                Remplir le questionnaire
+              <Link className="button button--secondary" href={site.inscriptionUrl}>
+                Comment s'inscrire
               </Link>
               <Link className="button button--ghost" href="/projet">
                 Découvrir le projet
               </Link>
-            </div>
-
-            <div className="hero__facts" aria-label="Points clés du dispositif">
-              {heroHighlights.map((highlight, index) => (
-                <span key={highlight}>
-                  {index === 0 ? (
-                    <ShieldCheck size={17} aria-hidden="true" />
-                  ) : index === 3 ? (
-                    <MapPin size={17} aria-hidden="true" />
-                  ) : (
-                    <CheckCircle size={17} aria-hidden="true" />
-                  )}
-                  {highlight}
-                </span>
-              ))}
             </div>
           </div>
 
@@ -56,13 +42,9 @@ export function Hero() {
             <div className="hero__seal">
               <img src="/images/agms-logo.png" alt="Logo AGMS" />
             </div>
-            <p className="hero__badge">
-              <Sparkles size={16} aria-hidden="true" />
-              Questionnaire d'orientation unique
-            </p>
             <div className="hero__mini-stats">
-              <strong>2 min</strong>
-              <span>pour faire le point sur votre situation</span>
+              <strong>5 min</strong>
+              <span>pour déposer votre demande, sans pièce justificative</span>
             </div>
             <div className="hero__mini-stats hero__mini-stats--light">
               <strong>2 voies</strong>

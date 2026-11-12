@@ -15,7 +15,7 @@ export default function RecrutementPage() {
       <PageHeader
         eyebrow="Recrutement"
         title="Devenir tuteur"
-        intro="Vous avez réussi votre première année et souhaitez accompagner les étudiants PASS/LAS en Guadeloupe ? Rejoignez l'équipe de tuteurs du dispositif AGMS."
+        intro="Vous avez réussi votre première année et souhaitez accompagner les étudiants de première année de santé en Guadeloupe ? Rejoignez l'équipe de tuteurs du dispositif AGMS."
       />
 
       <section className="section section--white">

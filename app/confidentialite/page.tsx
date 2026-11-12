@@ -8,41 +8,43 @@ export default function ConfidentialitePage() {
       <PageHeader
         eyebrow="Données personnelles"
         title="Politique de confidentialité"
-        intro="Une base claire pour expliquer le traitement des questionnaires d'orientation et demandes de contact."
+        intro="Une base claire pour expliquer le traitement des demandes d'inscription et des demandes de contact."
       />
 
       <section className="section section--white">
         <div className="container narrow prose">
           <SectionTitle title="Données collectées" />
           <p>
-            Le formulaire peut collecter les informations nécessaires au traitement d'une demande :
-            identité, coordonnées, situation actuelle, formation visée, indication de bourse,
-            message libre et consentement au traitement de la demande.
-          </p>
-          <p>
-            Aucun échelon de bourse n'est demandé dans le questionnaire en ligne. Les informations
-            servent à orienter l'étudiant ou sa famille vers la voie adaptée, puis à organiser un
-            échange avec l'équipe AGMS.
+            Le formulaire de contact peut collecter les informations nécessaires au traitement d'une
+            demande : identité, coordonnées, message libre et consentement au traitement de la
+            demande.
           </p>
 
-          <SectionTitle title="Pré-inscriptions" />
+          <SectionTitle title="Demandes d'inscription" />
           <p>
-            Le formulaire de pré-inscription collecte le prénom, le nom, l'adresse e-mail, le numéro
-            de téléphone, la situation de l'étudiant, l'établissement actuel et un éventuel message.
-            Ces informations servent uniquement à recontacter la personne au sujet de sa
-            pré-inscription.
+            Le dossier de demande d'inscription collecte le prénom, le nom, la date de naissance,
+            l'adresse e-mail, le numéro de téléphone, l'adresse postale, la situation de
+            l'étudiant·e (lycée ou établissement actuel, discipline envisagée), la situation de
+            bourse et l'échelon, la mention au bac (obtenue ou visée), les coordonnées d'un parent,
+            représentant légal ou contact d'urgence, l'autorisation de droit à l'image, le souhait
+            d'être ajouté·e au groupe WhatsApp de la promotion et un éventuel message.
+          </p>
+          <p>
+            Aucune pièce justificative, aucun numéro de sécurité sociale et aucune information de
+            santé ne sont demandés. Ces informations servent à étudier l'éligibilité de l'étudiant·e
+            au dispositif gratuit, puis à la recontacter au sujet de sa demande.
           </p>
           <p>
             Elles sont enregistrées dans un espace de stockage privé situé dans l'Union européenne,
             accessible uniquement à l'équipe AGMS, et ne sont jamais transmises à des tiers. Elles
-            sont conservées le temps nécessaire au traitement de la pré-inscription et peuvent être
-            modifiées ou supprimées sur simple demande.
+            sont conservées le temps nécessaire au traitement de la demande et peuvent être modifiées
+            ou supprimées sur simple demande.
           </p>
 
           <SectionTitle title="Finalité" />
           <p>
             Ces informations sont utilisées pour répondre aux demandes, vérifier l'éligibilité
-            potentielle et organiser la suite du parcours d'orientation ou d'information.
+            potentielle et organiser la suite du parcours d'inscription ou d'information.
           </p>
           <p>
             Les données sont traitées dans le cadre du RGPD, avec hébergement dans l'Union européenne.
