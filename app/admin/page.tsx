@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { Download, LogOut } from "lucide-react";
+import { AdminCockpit } from "@/components/AdminCockpit";
 import { AdminDeleteButton } from "@/components/AdminDeleteButton";
 import { AdminEligibility } from "@/components/AdminEligibility";
 import { AdminLoginForm } from "@/components/AdminLoginForm";
 import { PageHeader } from "@/components/PageHeader";
 import { isAdmin } from "@/lib/admin-auth";
+import { isBeyondCockpitEmailWindow } from "@/lib/cockpit";
 import { preinscription } from "@/lib/content";
 import {
+  canSendToCockpit,
   isProductionData,
   listPreinscriptions,
   type StoredPreinscription
@@ -17,6 +20,9 @@ export const metadata: Metadata = {
   title: "Espace admin",
   robots: { index: false, follow: false }
 };
+
+/** Un envoi au cockpit demandé depuis cette page peut faire trois essais : on lui laisse le temps. */
+export const maxDuration = 60;
 
 const dateFormat = new Intl.DateTimeFormat("fr-FR", {
   dateStyle: "short",
@@ -103,6 +109,17 @@ export default async function AdminPage() {
   const toStudy = records.filter((record) => !record.eligibility || record.eligibility === "a-etudier").length;
   const eligible = records.filter((record) => record.eligibility === "eligible").length;
   const notEligible = records.filter((record) => record.eligibility === "non-eligible").length;
+  const cockpitReady = canSendToCockpit();
+  const now = new Date();
+  const notSent = records.filter((record) => record.cockpit?.status !== "transmise");
+  const lateIds = new Set(
+    notSent.filter((record) => isBeyondCockpitEmailWindow(record.createdAt, now)).map((record) => record.pathname)
+  );
+  const unconfirmed = records.filter(
+    (record) => record.cockpit?.status === "transmise" && record.cockpit.automated
+  ).length;
+  // Le rattrapage quotidien (app/api/cron/cockpit) ne tourne que si CRON_SECRET est posée.
+  const retryPlanned = Boolean(process.env.CRON_SECRET);
 
   return (
     <>
@@ -118,6 +135,40 @@ export default async function AdminPage() {
             <p className="important-box admin-notice">
               Mode test : cette liste contient uniquement les essais faits en local, pas les vraies
               pré-inscriptions du site.
+            </p>
+          ) : !cockpitReady ? (
+            <p className="important-box admin-notice">
+              Le cockpit de l&apos;AGMS n&apos;est pas relié à ce site : les demandes restent ici et
+              ne lui sont pas transmises.
+            </p>
+          ) : null}
+
+          {cockpitReady && notSent.length > 0 ? (
+            <p className="important-box admin-notice" role="status">
+              <strong>
+                {notSent.length > 1
+                  ? `${notSent.length} demandes non transmises au cockpit de l'AGMS`
+                  : "1 demande non transmise au cockpit de l'AGMS"}
+              </strong>
+              {lateIds.size > 0
+                ? `, dont ${lateIds.size} reçue${lateIds.size > 1 ? "s" : ""} il y a plus de 14 jours`
+                : ""}
+              .{" "}
+              {retryPlanned
+                ? "Les échecs récents sont renvoyés automatiquement une fois par jour ; les autres se transmettent avec le bouton de leur ligne."
+                : "Transmettez-les avec le bouton de leur ligne."}
+            </p>
+          ) : null}
+
+          {unconfirmed > 0 ? (
+            <p className="important-box admin-notice" role="status">
+              <strong>
+                {unconfirmed > 1
+                  ? `${unconfirmed} demandes transmises sans que le cockpit confirme l'absence de message automatique`
+                  : "1 demande transmise sans que le cockpit confirme l'absence de message automatique"}
+              </strong>
+              . Vérifiez dans le cockpit qu&apos;aucun WhatsApp n&apos;est parti (lignes signalées
+              ci-dessous) avant de transmettre d&apos;autres demandes.
             </p>
           ) : null}
 
@@ -162,7 +213,20 @@ export default async function AdminPage() {
                     const detail = details(record);
                     return (
                       <tr key={record.pathname}>
-                        <td>{dateFormat.format(new Date(record.createdAt))}</td>
+                        <td>
+                          {dateFormat.format(new Date(record.createdAt))}
+                          <AdminCockpit
+                            pathname={record.pathname}
+                            state={record.cockpit}
+                            sentLabel={
+                              record.cockpit?.status === "transmise"
+                                ? dateFormat.format(new Date(record.cockpit.at))
+                                : undefined
+                            }
+                            canSend={cockpitReady}
+                            late={lateIds.has(record.pathname)}
+                          />
+                        </td>
                         <td>
                           <strong>{name}</strong>
                           <span className="admin-table__sub">{record.situation}</span>

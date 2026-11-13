@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "Déposez votre demande d'inscription au dispositif gratuit sous conditions de l'AGMS pour la rentrée 2027-2028 : dossier en ligne gratuit, sans pièce justificative. L'équipe étudie votre éligibilité et vous recontacte."
 };
 
+/** Après l'envoi du dossier, la transmission au cockpit de l'AGMS peut faire trois essais : on lui laisse le temps. */
+export const maxDuration = 60;
+
 export default async function PreinscriptionPage() {
   // La page est rendue à chaque visite : le formulaire s'ouvre tout seul à la date prévue.
   await connection();

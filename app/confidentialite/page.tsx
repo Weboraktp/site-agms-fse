@@ -36,9 +36,12 @@ export default function ConfidentialitePage() {
           </p>
           <p>
             Elles sont enregistrées dans un espace de stockage privé situé dans l'Union européenne,
-            accessible uniquement à l'équipe AGMS, et ne sont jamais transmises à des tiers. Elles
-            sont conservées le temps nécessaire au traitement de la demande et peuvent être modifiées
-            ou supprimées sur simple demande.
+            accessible uniquement à l'équipe AGMS. Pour traiter la demande, le prénom, le nom,
+            l'adresse e-mail, le numéro de téléphone, l'établissement, la situation, la discipline
+            envisagée, la situation de bourse (sans l'échelon), la mention au bac et le message sont
+            aussi enregistrés dans l'outil de gestion interne de l'AGMS. Ces informations sont
+            conservées le temps nécessaire au traitement de la demande et peuvent être modifiées ou
+            supprimées sur simple demande.
           </p>
 
           <SectionTitle title="Finalité" />

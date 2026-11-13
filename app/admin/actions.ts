@@ -3,7 +3,11 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { closeAdminSession, isAdmin, isValidAdminPassword, openAdminSession } from "@/lib/admin-auth";
-import { deletePreinscription, setPreinscriptionEligibility } from "@/lib/preinscription-server";
+import {
+  deletePreinscription,
+  setPreinscriptionEligibility,
+  transmitPreinscription
+} from "@/lib/preinscription-server";
 
 export type LoginState = { error?: string };
 
@@ -32,5 +36,12 @@ export async function changeEligibility(formData: FormData) {
 export async function removePreinscription(formData: FormData) {
   if (!(await isAdmin())) redirect("/admin");
   await deletePreinscription(String(formData.get("pathname") ?? ""));
+  revalidatePath("/admin");
+}
+
+/** Transmet (ou renvoie) une demande au cockpit de l'AGMS : sans risque de doublon, le cockpit reconnaît l'identifiant. */
+export async function sendPreinscriptionToCockpit(formData: FormData) {
+  if (!(await isAdmin())) redirect("/admin");
+  await transmitPreinscription(String(formData.get("pathname") ?? ""));
   revalidatePath("/admin");
 }

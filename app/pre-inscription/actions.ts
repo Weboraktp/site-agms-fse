@@ -1,8 +1,14 @@
 "use server";
 
 import { randomUUID } from "node:crypto";
+import { after } from "next/server";
 import { preinscription, site } from "@/lib/content";
-import { isPreinscriptionOpen, savePreinscription } from "@/lib/preinscription-server";
+import {
+  isPreinscriptionOpen,
+  savePreinscription,
+  transmitPreinscription,
+  type Preinscription
+} from "@/lib/preinscription-server";
 
 type Field =
   | "firstName"
@@ -146,21 +152,32 @@ export async function submitPreinscription(
     };
   }
 
+  const record: Preinscription = {
+    id: randomUUID(),
+    createdAt: new Date().toISOString(),
+    ...values,
+    // L'échelon et la mention n'ont de sens que si la réponse précédente les appelle.
+    scholarshipLevel: values.scholarship === "Oui" ? values.scholarshipLevel : "",
+    bacMention: values.bacMentionStatus === "Pas de mention" ? "" : values.bacMention
+  };
+
+  let pathname: string;
   try {
-    await savePreinscription({
-      id: randomUUID(),
-      createdAt: new Date().toISOString(),
-      ...values,
-      // L'échelon et la mention n'ont de sens que si la réponse précédente les appelle.
-      scholarshipLevel: values.scholarship === "Oui" ? values.scholarshipLevel : "",
-      bacMention: values.bacMentionStatus === "Pas de mention" ? "" : values.bacMention
-    });
+    pathname = await savePreinscription(record);
   } catch (error) {
     console.error("Enregistrement de la demande d'inscription impossible", error);
     return {
       status: "error",
       message: `Votre demande n'a pas pu être enregistrée. Réessayez dans un instant ou contactez-nous au ${site.phones[0]}.`
     };
+  }
+
+  // La demande est enregistrée : elle part aussi au cockpit de l'AGMS, une fois la réponse rendue.
+  // Un échec ne change rien pour la personne (il est noté dans l'enregistrement et visible dans l'admin).
+  try {
+    after(() => transmitPreinscription(pathname, record));
+  } catch {
+    console.error("[cockpit] transmission non planifiée", { id: record.id });
   }
 
   return { status: "success", firstName: values.firstName, scholarship: values.scholarship };

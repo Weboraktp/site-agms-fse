@@ -375,8 +375,10 @@ export function PreinscriptionForm() {
 
       <p className="form-legal">
         Vos données sont uniquement utilisées par l&apos;AGMS pour traiter votre demande
-        d&apos;inscription et ne sont jamais transmises à des tiers. Vous pouvez demander leur
-        modification ou leur suppression à tout moment en écrivant à {site.email}.
+        d&apos;inscription. Elles sont enregistrées sur ce site ; celles qui servent à étudier votre
+        éligibilité et à vous recontacter le sont aussi dans l&apos;outil de gestion interne de
+        l&apos;AGMS. Vous pouvez demander leur modification ou leur suppression à tout moment en
+        écrivant à {site.email}.
       </p>
     </form>
   );
