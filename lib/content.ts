@@ -492,7 +492,7 @@ export const supportCards = [
 ];
 
 export const salonText =
-  "Le salon des métiers de la santé est un temps fort du projet FSE+ de l'AGMS. Prévu en septembre au Palais des Sports du Gosier, il vise à informer les jeunes et leurs familles sur la diversité des métiers médicaux, paramédicaux, sociaux, de prévention et de recherche. Il permet aussi de créer un lien concret entre lycéens, étudiants, professionnels de santé, centres de formation et acteurs de l'orientation.";
+  "Le salon des métiers de la santé est un temps fort du projet FSE+ de l'AGMS. Organisé le samedi 19 septembre 2026 au Palais des Sports du Gosier, il visait à informer les jeunes et leurs familles sur la diversité des métiers médicaux, paramédicaux, sociaux, de prévention et de recherche. Il a aussi permis de créer un lien concret entre lycéens, étudiants, professionnels de santé, centres de formation et acteurs de l'orientation.";
 
 export const salonItems = [
   "Témoignages de professionnels",
@@ -506,9 +506,9 @@ export const salonItems = [
 
 export const salonEventDetails = [
   {
-    label: "Période",
-    value: "Septembre",
-    text: "Date précise à confirmer par l'AGMS."
+    label: "Date",
+    value: "Samedi 19 septembre 2026",
+    text: "Le bilan de fréquentation est présenté ci-dessous."
   },
   {
     label: "Lieu",

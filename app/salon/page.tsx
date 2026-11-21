@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, CalendarDays, Mail, MapPin, Users } from "lucide-react";
 import { FeatureCard } from "@/components/FeatureCard";
 import { PageHeader } from "@/components/PageHeader";
+import { SalonBilanChiffres, SalonBilanProfils } from "@/components/SalonBilan";
 import { SectionTitle } from "@/components/SectionTitle";
 import {
   salonEventDetails,
@@ -17,7 +18,7 @@ export default function SalonPage() {
       <PageHeader
         eyebrow="Salon santé"
         title="Le salon des métiers de la santé"
-        intro="Un temps fort prévu en septembre au Palais des Sports du Gosier pour aider les jeunes et leurs familles à comprendre la diversité des parcours de santé."
+        intro="Un temps fort organisé le 19 septembre 2026 pour aider les jeunes et leurs familles à comprendre la diversité des parcours de santé."
       />
 
       <section className="section section--white">
@@ -47,6 +48,14 @@ export default function SalonPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="section section--accent" id="bilan">
+        <div className="container narrow prose">
+          <SectionTitle eyebrow="Bilan" title="Bilan de fréquentation du salon du 19 septembre 2026" />
+          <SalonBilanChiffres />
+          <SalonBilanProfils />
         </div>
       </section>
 

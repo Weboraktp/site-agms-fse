@@ -10,7 +10,10 @@ type NewsSectionProps = {
 
 /** « Actualités » : les articles marqués `news`, du plus récent au plus ancien. */
 export function NewsSection({ white = true }: NewsSectionProps) {
-  const news = blogPosts.filter((post) => post.news).slice(0, 2);
+  const news = blogPosts
+    .filter((post) => post.news)
+    .sort((a, b) => b.dateISO.localeCompare(a.dateISO))
+    .slice(0, 3);
 
   return (
     <section className={`section ${white ? "section--white" : ""}`} id="actualites">

@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import { BilanSalon } from "@/components/articles/BilanSalon";
 import { LicencePortailSante } from "@/components/articles/LicencePortailSante";
 import { MajorRencontre } from "@/components/articles/MajorRencontre";
 
@@ -54,6 +55,17 @@ export const blogPosts: BlogPost[] = [
     image: "/images/vie-de-l-accompagnement/intervention-major-2024-2025.webp",
     imageAlt: "Le major 2024-2025 face aux étudiants, dans une salle de cours",
     Body: MajorRencontre
+  },
+  {
+    slug: "bilan-frequentation-salon-metiers-sante-2026",
+    title: "Salon des métiers de la santé : le bilan de fréquentation",
+    date: "19 septembre 2026",
+    dateISO: "2026-09-19",
+    author: "L'équipe AGMS",
+    excerpt:
+      "Le 19 septembre 2026 au Gosier : 381 pré-inscriptions et au moins 332 visiteurs recensés avant 14 h, dont 221 venus sans s'être pré-inscrits.",
+    news: true,
+    Body: BilanSalon
   }
 ];
 
