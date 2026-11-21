@@ -27,6 +27,9 @@ export default function SalonPage() {
             <SectionTitle title="Informer, orienter, créer du lien" />
             <div className="prose">
               <p>{salonText}</p>
+              <p>
+                <strong>La date du prochain salon sera communiquée très bientôt.</strong>
+              </p>
             </div>
             <Link className="button button--secondary button--on-light" href="/contact">
               <Mail size={18} aria-hidden="true" />
