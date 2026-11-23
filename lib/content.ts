@@ -381,23 +381,22 @@ export const eligibilityCriteria = [
 
 export const annualTimeline = [
   {
-    period: "Octobre à mars",
-    title: "Informer les lycéens",
+    period: "Septembre 2026",
+    title: "Démarrer avec méthode",
     items: [
-      "Interventions dans les lycées",
-      "Information sur la licence portail santé et Parcoursup",
-      "Découverte des métiers de la santé",
-      "Échanges avec étudiants tuteurs et professionnels"
+      "Rentrée des groupes de la prépa",
+      "Méthodologie et organisation",
+      "Introduction aux matières",
+      "Compréhension du fonctionnement de la première année de santé"
     ]
   },
   {
-    period: "Août / septembre",
-    title: "Démarrer avec méthode",
+    period: "Samedi 19 septembre 2026",
+    title: "Salon des métiers de la santé — 1re édition",
     items: [
-      "Méthodologie",
-      "Organisation",
-      "Introduction aux matières",
-      "Compréhension du fonctionnement de la première année de santé"
+      "Au Gosier, de 9 h à 18 h",
+      "Rencontres avec professionnels et structures de formation",
+      "Orientation des lycéens, des étudiants et des familles"
     ]
   },
   {
@@ -412,12 +411,22 @@ export const annualTimeline = [
     ]
   },
   {
+    period: "Décembre à mars",
+    title: "Informer les lycéens",
+    items: [
+      "Interventions dans les lycées",
+      "Information sur la licence portail santé et Parcoursup",
+      "Découverte des métiers de la santé",
+      "Échanges avec étudiants tuteurs et professionnels"
+    ]
+  },
+  {
     period: "Décembre / janvier",
     title: "Préparer les échéances",
     items: ["Révisions", "Annales", "Examens blancs", "Bilan individuel"]
   },
   {
-    period: "Janvier à mai",
+    period: "Janvier à juin",
     title: "Consolider le second semestre",
     items: [
       "Accompagnement du second semestre",
@@ -427,8 +436,17 @@ export const annualTimeline = [
     ]
   },
   {
-    period: "Pendant l'année",
-    title: "Soutenir la progression",
+    period: "Mars 2027",
+    title: "Salon des métiers de la santé — 2e édition",
+    items: [
+      "Date précise communiquée très bientôt",
+      "Orientation",
+      "Rencontres avec professionnels et structures de formation"
+    ]
+  },
+  {
+    period: "De septembre à juin",
+    title: "Soutien et bien-être",
     items: [
       "Ateliers méthodologiques",
       "Aide à l'organisation",
@@ -438,12 +456,12 @@ export const annualTimeline = [
     ]
   },
   {
-    period: "Janvier à juin",
-    title: "Ouvrir les horizons santé",
+    period: "Toute l'année",
+    title: "Informer et rendre compte",
     items: [
-      "Salon des métiers de la santé",
-      "Orientation",
-      "Rencontres avec professionnels et structures de formation"
+      "Réseaux sociaux et site du dispositif",
+      "Webinaires",
+      "Affiches et supports d'information"
     ]
   }
 ];
